@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyScope ドローンサービス | ドローン測量・空撮・点検</title>
+  <meta name="description" content="SkyScope（スカイスコープ）は、ドローン測量・空撮・点検・農薬散布・機体販売を手がけるドローンサービス企業です。最先端技術で空から未来を支えます。">
+  <meta property="og:title" content="SkyScope ドローンサービス | ドローン測量・空撮・点検">
+  <meta property="og:description" content="最先端ドローン技術で、測量・空撮・点検・農薬散布をワンストップで提供します。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* --- Hero Section (Enhanced) --- */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      background: #0F1A30;
+      overflow: hidden;
+    }
+
+    .hero__canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(15, 26, 48, 0.7) 0%, rgba(27, 42, 74, 0.5) 50%, rgba(15, 26, 48, 0.8) 100%);
+      z-index: 3;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 4;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+      width: 100%;
+    }
+
+    .hero__label {
+      font-family: var(--font-en);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-md);
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease 0.3s forwards;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero__label::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--color-primary);
+    }
+
+    .hero__title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--color-white);
+      line-height: 1.3;
+      margin-bottom: var(--spacing-lg);
+      visibility: hidden;
+      max-width: 700px;
+    }
+
+    .hero__title .accent {
+      color: var(--color-primary);
+    }
+
+    .hero__subtitle {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.9;
+      max-width: 600px;
+      margin-bottom: var(--spacing-xl);
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease 1.5s forwards;
+    }
+
+    .hero__buttons {
+      display: flex;
+      gap: var(--spacing-sm);
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s ease 1.8s forwards;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: var(--font-en);
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero__scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255, 107, 0, 0.8), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0% { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      50.1% { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero Badge */
+    .hero__badge {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      text-align: center;
+    }
+
+    .hero__badge-circle {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255, 107, 0, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 107, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .hero__badge-number {
+      font-family: var(--font-en);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+
+    .hero__badge-text {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 4px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(-50%) translateX(0); }
+      50% { transform: translateY(calc(-50% - 15px)) translateX(5px); }
+    }
+
+    /* --- Services Section (Enhanced with Tilt) --- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--spacing-md);
+    }
+
+    .service-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl) var(--spacing-md);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      border-top: 3px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 107, 0, 0.03) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl);
+      border-top-color: var(--color-primary);
+    }
+
+    .service-card__icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto var(--spacing-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(255, 107, 0, 0.12), rgba(255, 140, 51, 0.05));
+      border-radius: var(--radius-xl);
+      transition: all 0.4s ease;
+    }
+
+    .service-card:hover .service-card__icon {
+      background: linear-gradient(135deg, rgba(255, 107, 0, 0.2), rgba(255, 140, 51, 0.1));
+      transform: scale(1.1);
+    }
+
+    .service-card__icon svg {
+      width: 32px;
+      height: 32px;
+      color: var(--color-primary);
+    }
+
+    .service-card__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .service-card__text {
+      font-size: 0.8125rem;
+      color: var(--color-text-sub);
+      line-height: 1.7;
+    }
+
+    .service-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-top: var(--spacing-sm);
+      transition: gap 0.3s ease;
+    }
+
+    .service-card:hover .service-card__link {
+      gap: 0.5rem;
+    }
+
+    /* --- Why Section --- */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-xl);
+    }
+
+    .why-card {
+      text-align: center;
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .why-card__number {
+      font-family: var(--font-en);
+      font-size: 4rem;
+      font-weight: 900;
+      -webkit-text-stroke: 1px var(--color-primary);
+      color: transparent;
+      line-height: 1;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .why-card__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .why-card__text {
+      font-size: 0.9375rem;
+      color: var(--color-text-sub);
+      line-height: 1.8;
+    }
+
+    /* --- Numbers Section (Enhanced) --- */
+    .numbers-section {
+      position: relative;
+      padding: var(--spacing-4xl) 0;
+      background-image: url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .numbers-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 26, 48, 0.85);
+      backdrop-filter: blur(2px);
+    }
+
+    .numbers-section__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--spacing-lg);
+      text-align: center;
+    }
+
+    .number-item {
+      padding: var(--spacing-xl) var(--spacing-md);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      transition: all 0.3s ease;
+    }
+
+    .number-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .number-item__icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto var(--spacing-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(255, 107, 0, 0.2), rgba(255, 140, 51, 0.1));
+      border-radius: 50%;
+      font-size: 1.5rem;
+    }
+
+    .number-item__value {
+      font-family: var(--font-en);
+      font-size: 3rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .number-item__label {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* --- News Section (Enhanced) --- */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--spacing-md);
+      padding: var(--spacing-md) var(--spacing-sm);
+      border-bottom: 1px solid var(--color-border);
+      transition: all 0.3s ease;
+      border-radius: var(--radius-sm);
+    }
+
+    .news-item:hover {
+      padding-left: var(--spacing-md);
+      background: var(--color-bg-sub);
+    }
+
+    .news-item__date {
+      font-family: var(--font-en);
+      font-size: 0.875rem;
+      color: var(--color-text-light);
+      white-space: nowrap;
+      min-width: 100px;
+    }
+
+    .news-item__tag {
+      white-space: nowrap;
+    }
+
+    .news-item__title {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--color-text-main);
+      transition: color var(--transition-fast);
+    }
+
+    .news-item:hover .news-item__title {
+      color: var(--color-primary);
+    }
+
+    .news-more {
+      text-align: center;
+      margin-top: var(--spacing-xl);
+    }
+
+    /* --- Flow Section --- */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .flow-step {
+      text-align: center;
+      padding: var(--spacing-lg) var(--spacing-sm);
+      position: relative;
+    }
+
+    .flow-step::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 2px;
+      background: var(--color-primary);
+    }
+
+    .flow-step:last-child::after {
+      display: none;
+    }
+
+    .flow-step__number {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.1em;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .flow-step__icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto var(--spacing-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-white);
+      border-radius: 50%;
+      box-shadow: var(--shadow-md);
+      color: var(--color-primary);
+      font-size: 1.5rem;
+    }
+
+    .flow-step__title {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+    }
+
+    /* --- Enhanced CTA --- */
+    .cta-enhanced {
+      position: relative;
+      padding: var(--spacing-4xl) 0;
+      background-image: url('https://images.unsplash.com/photo-1534196213718-bd643e406be4?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .cta-enhanced::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 107, 0, 0.9) 0%, rgba(224, 94, 0, 0.85) 100%);
+    }
+
+    .cta-enhanced__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-enhanced h2 {
+      color: var(--color-white);
+      font-size: 2.25rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .cta-enhanced p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: var(--spacing-xl);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 1023px) {
+      .hero__title { font-size: 2.5rem; }
+      .hero__badge { display: none; }
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      .numbers-section__inner { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(3, 1fr); }
+      .flow-grid { grid-template-columns: repeat(3, 1fr); }
+      .flow-step:nth-child(3)::after { display: none; }
+    }
+
+    @media (max-width: 767px) {
+      .hero { min-height: 550px; }
+      .hero__title { font-size: 1.75rem; }
+      .hero__subtitle { font-size: 0.9375rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .numbers-section__inner { grid-template-columns: 1fr 1fr; }
+      .number-item__value { font-size: 2.25rem; }
+      .news-item { flex-direction: column; gap: var(--spacing-xs); }
+      .hero__buttons { flex-direction: column; }
+      .hero__buttons .btn { width: 100%; text-align: center; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-card__number { font-size: 3rem; }
+      .flow-grid { grid-template-columns: 1fr 1fr; gap: var(--spacing-sm); }
+      .flow-step::after { display: none; }
+      .numbers-section { background-attachment: scroll; }
+      .cta-enhanced { background-attachment: scroll; }
+      .cta-enhanced h2 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loading-screen__logo">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+        <circle cx="20" cy="20" r="18" stroke="#FF6B00" stroke-width="1.5" opacity="0.3"/>
+        <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+        <circle cx="20" cy="22" r="4" fill="white"/>
+        <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="10" cy="20" r="2" fill="white" opacity="0.5"/>
+        <circle cx="30" cy="20" r="2" fill="white" opacity="0.5"/>
+        <circle cx="20" cy="32" r="2" fill="white" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="loading-screen__text" style="color: rgba(255,255,255,0.4); font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 2rem;">SKYSCOPE DRONE SERVICES</div>
+    <div class="loading-screen__progress">
+      <div class="loading-screen__progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Page Transition -->
+  <div class="page-transition active"></div>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="SkyScope ホーム">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+          <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+          <circle cx="20" cy="22" r="4" fill="currentColor"/>
+          <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="10" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="30" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="20" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+        </svg>
+        <span class="header__logo-text">
+          <span class="header__logo-main">SKYSCOPE</span>
+          <span class="header__logo-sub">DRONE SERVICES</span>
+        </span>
+      </a>
+
+      <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="header__nav-list">
+          <li><a href="index.html" class="header__nav-link active">ホーム</a></li>
+          <li><a href="pages/about.html" class="header__nav-link">会社概要</a></li>
+          <li><a href="pages/services.html" class="header__nav-link">業務内容</a></li>
+          <li><a href="pages/news.html" class="header__nav-link">ニュース</a></li>
+          <li><a href="pages/works.html" class="header__nav-link">成果物紹介</a></li>
+          <li><a href="pages/equipment.html" class="header__nav-link">機体紹介</a></li>
+        </ul>
+        <a href="pages/services.html#contact" class="header__cta">
+          お問い合わせ
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
+    <div class="mobile-nav__inner">
+      <a href="index.html" class="mobile-nav__link">ホーム</a>
+      <a href="pages/about.html" class="mobile-nav__link">会社概要</a>
+      <a href="pages/services.html" class="mobile-nav__link">業務内容</a>
+      <a href="pages/news.html" class="mobile-nav__link">ニュース</a>
+      <a href="pages/works.html" class="mobile-nav__link">成果物紹介</a>
+      <a href="pages/equipment.html" class="mobile-nav__link">機体紹介</a>
+      <a href="pages/services.html#contact" class="mobile-nav__link" style="color: var(--color-primary);">お問い合わせ</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section with Background Image Slideshow -->
+    <section class="hero" data-slides="https://images.unsplash.com/photo-1505203762024-6d9eee62e61a?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920,https://images.unsplash.com/photo-1657093114835-031e7cf9520c?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920,https://images.unsplash.com/photo-1534196213718-bd643e406be4?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920,https://images.unsplash.com/photo-1526112982068-f899a62e118e?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920">
+      <canvas id="particle-canvas" class="hero__canvas"></canvas>
+      <div class="hero__overlay"></div>
+
+      <!-- Floating badge -->
+      <div class="hero__badge">
+        <div class="hero__badge-circle">
+          <span class="hero__badge-number">500+</span>
+          <span class="hero__badge-text">年間ミッション</span>
+        </div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__label">Drone Technology × Innovation</p>
+        <h1 class="hero__title typewriter" data-text="空から未来を測る。先端ドローン技術で、あらゆる現場を革新します。">空から未来を測る。先端ドローン技術で、あらゆる現場を革新します。</h1>
+        <p class="hero__subtitle">測量・空撮・点検・農薬散布まで、高精度なドローンソリューションをワンストップで提供。経験豊富なパイロットと最新機体で、お客様の課題を解決します。</p>
+        <div class="hero__buttons">
+          <a href="pages/services.html" class="btn btn-magnetic btn-magnetic--primary">
+            サービスを見る
+            <span class="btn__arrow">→</span>
+          </a>
+          <a href="pages/about.html" class="btn btn--outline">
+            会社について
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__scroll">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="section-divider section-divider--wave section-divider--bg">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C360,0 720,40 1080,10 C1260,-5 1380,30 1440,20 L1440,60 Z"/></svg>
+    </div>
+
+    <!-- Services Section -->
+    <section class="section section--bg" id="services">
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">Our Services</span>
+          <h2>事業内容</h2>
+          <p class="section-subtitle">5つのコアサービスで、幅広いニーズにお応えします</p>
+        </div>
+
+        <div class="services-grid stagger-children">
+          <!-- Survey -->
+          <a href="pages/services.html#survey" class="service-card tilt-card fade-in">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 28L12 16L18 22L28 8"/>
+                <path d="M4 28H28"/>
+                <circle cx="12" cy="16" r="2"/>
+                <circle cx="28" cy="8" r="2"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">ドローン測量</h3>
+            <p class="service-card__text">高精度3D測量で、広大な土地も短時間で計測。作業効率を大幅に向上させます。</p>
+            <span class="service-card__link">詳しく見る →</span>
+          </a>
+
+          <!-- Aerial Photo -->
+          <a href="pages/services.html#aerial" class="service-card tilt-card fade-in">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="8" width="24" height="16" rx="2"/>
+                <circle cx="16" cy="16" r="5"/>
+                <circle cx="16" cy="16" r="2"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">空撮サービス</h3>
+            <p class="service-card__text">4K・8K対応の高画質空撮。建設記録、PR映像、イベント撮影まで。</p>
+            <span class="service-card__link">詳しく見る →</span>
+          </a>
+
+          <!-- Inspection -->
+          <a href="pages/services.html#inspection" class="service-card tilt-card fade-in">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 4V12H4"/>
+                <path d="M4 12L16 28L28 12"/>
+                <path d="M20 4V12H28"/>
+                <path d="M16 20V28"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">点検サービス</h3>
+            <p class="service-card__text">インフラ設備の安全点検を効率化。高所・危険箇所も安全にチェック。</p>
+            <span class="service-card__link">詳しく見る →</span>
+          </a>
+
+          <!-- Spraying -->
+          <a href="pages/services.html#spray" class="service-card tilt-card fade-in">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 28C8 28 4 20 4 16C4 12 8 8 16 8C24 8 28 12 28 16C28 20 24 28 24 28"/>
+                <path d="M12 28H20"/>
+                <path d="M16 4V8"/>
+                <circle cx="16" cy="16" r="3"/>
+                <path d="M10 22L14 18M22 22L18 18" opacity="0.5"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">農薬散布</h3>
+            <p class="service-card__text">精密な自動飛行で、ムラなく均一な散布を実現。農作業の負担を軽減します。</p>
+            <span class="service-card__link">詳しく見る →</span>
+          </a>
+
+          <!-- Sales -->
+          <a href="pages/equipment.html" class="service-card tilt-card fade-in">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="4" width="20" height="24" rx="2"/>
+                <path d="M12 12H20M12 16H20M12 20H17"/>
+                <path d="M10 4V1M22 4V1"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title">機体販売</h3>
+            <p class="service-card__text">用途に最適な機体をご提案。購入後のサポートやメンテナンスも承ります。</p>
+            <span class="service-card__link">詳しく見る →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="float-element float-element--circle float-element--anim-1" style="width:20px;height:20px;top:15%;left:5%;"></div>
+      <div class="float-element float-element--square float-element--anim-2" style="width:15px;height:15px;top:70%;right:8%;"></div>
+      <div class="float-element float-element--ring float-element--anim-3" style="width:30px;height:30px;bottom:20%;left:12%;"></div>
+    </section>
+
+    <!-- Diagonal Divider -->
+    <div class="section-divider section-divider--diagonal" style="background: var(--color-bg-sub);"></div>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">Why SkyScope</span>
+          <h2>選ばれる理由</h2>
+          <p class="section-subtitle">確かな技術力と充実のサポート体制</p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card fade-in">
+            <div class="why-card__number">01</div>
+            <h3 class="why-card__title">国家資格保有パイロット</h3>
+            <p class="why-card__text">全パイロットが一等・二等無人航空機操縦士の国家資格を保有。安全で確実なフライト運用を実現します。</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-card__number">02</div>
+            <h3 class="why-card__title">最新鋭の機体ラインナップ</h3>
+            <p class="why-card__text">RTK測量対応機から8Kカメラ搭載機まで、用途に応じた最適な機体で高品質なデータを取得します。</p>
+          </div>
+          <div class="why-card fade-in">
+            <div class="why-card__number">03</div>
+            <h3 class="why-card__title">ワンストップサービス</h3>
+            <p class="why-card__text">飛行計画・許可申請から撮影・データ解析・納品まで、すべてを一貫して対応。お客様の手間を最小化します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider to Numbers -->
+    <div class="section-divider section-divider--wave section-divider--dark">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C240,20 480,50 720,30 C960,10 1200,45 1440,15 L1440,60 Z"/></svg>
+    </div>
+
+    <!-- Numbers Section with Background Image -->
+    <section class="numbers-section" id="numbers">
+      <div class="container">
+        <div class="section-title fade-in" style="margin-bottom: var(--spacing-2xl);">
+          <span class="en-title" style="color: var(--color-primary);">Achievement</span>
+          <h2 style="color: white;">数字で見る実績</h2>
+        </div>
+        <div class="numbers-section__inner">
+          <div class="number-item fade-in">
+            <div class="number-item__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2" stroke-linecap="round"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            </div>
+            <div class="number-item__value" data-count="500" data-suffix="+">0+</div>
+            <div class="number-item__label">年間飛行ミッション数</div>
+          </div>
+          <div class="number-item fade-in">
+            <div class="number-item__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="number-item__value" data-count="98" data-suffix="%">0%</div>
+            <div class="number-item__label">顧客満足度</div>
+          </div>
+          <div class="number-item fade-in">
+            <div class="number-item__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="number-item__value" data-count="150" data-suffix="+">0+</div>
+            <div class="number-item__label">取引企業数</div>
+          </div>
+          <div class="number-item fade-in">
+            <div class="number-item__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <div class="number-item__value" data-count="10000" data-suffix="ha">0ha</div>
+            <div class="number-item__label">累計測量面積</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider from Numbers -->
+    <div class="section-divider section-divider--wave-top section-divider--white">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C360,0 720,40 1080,10 C1260,-5 1380,30 1440,20 L1440,60 Z"/></svg>
+    </div>
+
+    <!-- Parallax Section -->
+    <section class="parallax-section" data-parallax data-speed="0.3" style="background-image: url('https://images.unsplash.com/photo-1515405969538-5642ed9d0cc4?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920');">
+    </section>
+
+    <!-- Flow Section -->
+    <section class="section section--bg" id="flow">
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">Work Flow</span>
+          <h2>ご依頼の流れ</h2>
+        </div>
+
+        <div class="flow-grid">
+          <div class="flow-step fade-in">
+            <div class="flow-step__number">STEP 01</div>
+            <div class="flow-step__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h4 class="flow-step__title">お問い合わせ</h4>
+          </div>
+          <div class="flow-step fade-in">
+            <div class="flow-step__number">STEP 02</div>
+            <div class="flow-step__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h4 class="flow-step__title">ヒアリング・見積</h4>
+          </div>
+          <div class="flow-step fade-in">
+            <div class="flow-step__number">STEP 03</div>
+            <div class="flow-step__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h4 class="flow-step__title">飛行計画・許可申請</h4>
+          </div>
+          <div class="flow-step fade-in">
+            <div class="flow-step__number">STEP 04</div>
+            <div class="flow-step__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h4 class="flow-step__title">現場作業・撮影</h4>
+          </div>
+          <div class="flow-step fade-in">
+            <div class="flow-step__number">STEP 05</div>
+            <div class="flow-step__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h4 class="flow-step__title">データ解析・納品</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="section" id="news">
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">News</span>
+          <h2>お知らせ</h2>
+        </div>
+
+        <div class="news-list fade-in">
+          <a href="pages/news.html" class="news-item">
+            <span class="news-item__date">2026.02.10</span>
+            <span class="tag tag--news news-item__tag">お知らせ</span>
+            <span class="news-item__title">コーポレートサイトをリニューアルしました</span>
+          </a>
+          <a href="pages/news.html" class="news-item">
+            <span class="news-item__date">2026.02.01</span>
+            <span class="tag tag--achievement news-item__tag">実績</span>
+            <span class="news-item__title">大規模太陽光発電所の点検業務を受託しました</span>
+          </a>
+          <a href="pages/news.html" class="news-item">
+            <span class="news-item__date">2026.01.20</span>
+            <span class="tag tag--info news-item__tag">お知らせ</span>
+            <span class="news-item__title">新型測量用ドローン「SkyMapper Pro」の取り扱いを開始しました</span>
+          </a>
+          <a href="pages/news.html" class="news-item">
+            <span class="news-item__date">2026.01.10</span>
+            <span class="tag tag--media news-item__tag">メディア</span>
+            <span class="news-item__title">建設業界誌「ドローンテクノロジー」に弊社の測量技術が紹介されました</span>
+          </a>
+        </div>
+
+        <div class="news-more fade-in">
+          <a href="pages/news.html" class="btn btn--outline-dark btn-magnetic">
+            ニュース一覧へ
+            <span class="btn__arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section with Background Image -->
+    <section class="cta-enhanced">
+      <div class="container">
+        <div class="cta-enhanced__content fade-in">
+          <h2>ドローンのことなら、お気軽にご相談ください</h2>
+          <p>測量・空撮・点検・農薬散布の無料見積もりから、機体の選定まで、専門スタッフが丁寧にお答えします。</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="pages/services.html#contact" class="btn btn--secondary btn-magnetic">
+              お問い合わせはこちら
+              <span class="btn__arrow">→</span>
+            </a>
+            <a href="tel:000-0000-0000" class="btn btn--outline" style="border-color: white;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              000-0000-0000
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+              <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+              <circle cx="20" cy="22" r="4" fill="currentColor"/>
+              <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="10" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+              <circle cx="30" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+              <circle cx="20" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <span class="header__logo-text">
+              <span class="header__logo-main">SKYSCOPE</span>
+              <span class="header__logo-sub">DRONE SERVICES</span>
+            </span>
+          </a>
+          <p class="footer__desc">SkyScope（スカイスコープ）は、先端ドローン技術を活用し、測量・空撮・点検・農薬散布・機体販売を行うドローンサービス企業です。</p>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">サービス</h4>
+          <nav class="footer__links">
+            <a href="pages/services.html" class="footer__link">ドローン測量</a>
+            <a href="pages/services.html" class="footer__link">空撮サービス</a>
+            <a href="pages/services.html" class="footer__link">点検サービス</a>
+            <a href="pages/services.html" class="footer__link">農薬散布</a>
+            <a href="pages/services.html" class="footer__link">機体販売</a>
+          </nav>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">企業情報</h4>
+          <nav class="footer__links">
+            <a href="pages/about.html" class="footer__link">会社概要</a>
+            <a href="pages/news.html" class="footer__link">ニュース</a>
+            <a href="pages/works.html" class="footer__link">成果物紹介</a>
+            <a href="pages/equipment.html" class="footer__link">機体紹介</a>
+          </nav>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">お問い合わせ</h4>
+          <div class="footer__links">
+            <span class="footer__link">TEL: 000-0000-0000</span>
+            <span class="footer__link">受付: 平日 9:00〜18:00</span>
+            <span class="footer__link">info@skyscope-drone.example</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 SkyScope Drone Services. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Top Button -->
+  <button class="page-top" aria-label="ページトップへ戻る">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 16V4M10 4L4 10M10 4L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会社概要 | SkyScope ドローンサービス</title>
+  <meta name="description" content="SkyScope株式会社（スカイスコープ）の会社概要ページです。代表挨拶、企業理念、会社情報、沿革、アクセスをご紹介します。">
+  <meta property="og:title" content="会社概要 | SkyScope ドローンサービス">
+  <meta property="og:description" content="SkyScope株式会社の企業情報。ドローン技術で日本のインフラを革新する。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* --- About Page Header (force scrolled appearance) --- */
+    .header--subpage {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .header--subpage .header__logo {
+      color: var(--color-secondary);
+    }
+
+    .header--subpage .header__nav-link {
+      color: var(--color-text-main);
+    }
+
+    .header--subpage .hamburger__line {
+      background: var(--color-secondary);
+    }
+
+    /* --- CEO Greeting Section --- */
+    .ceo-section {
+      padding: var(--spacing-4xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ceo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: var(--spacing-3xl);
+      align-items: start;
+    }
+
+    .ceo-photo {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+      aspect-ratio: 3 / 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ceo-photo__placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .ceo-photo__placeholder svg {
+      width: 80px;
+      height: 80px;
+      opacity: 0.3;
+    }
+
+    .ceo-photo__placeholder span {
+      font-size: 0.875rem;
+      font-weight: var(--font-weight-medium);
+    }
+
+    .ceo-photo::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: var(--color-primary);
+    }
+
+    .ceo-content__label {
+      font-family: var(--font-en);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .ceo-content__title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.5;
+    }
+
+    .ceo-content__text {
+      font-size: 0.9375rem;
+      color: var(--color-text-main);
+      line-height: 2;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .ceo-content__text:last-of-type {
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .ceo-content__signature {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.25rem;
+      padding-top: var(--spacing-md);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .ceo-content__role {
+      font-size: 0.8125rem;
+      color: var(--color-text-sub);
+    }
+
+    .ceo-content__name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      letter-spacing: 0.1em;
+    }
+
+    /* --- Mission / Vision / Values Section --- */
+    .philosophy-section {
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+      padding: var(--spacing-4xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philosophy-section::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(255, 107, 0, 0.06);
+    }
+
+    .philosophy-section::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .philosophy-section .section-title .en-title {
+      color: var(--color-primary);
+    }
+
+    .philosophy-section .section-title h2 {
+      color: var(--color-white);
+    }
+
+    .philosophy-section .section-title h2::after {
+      background: var(--color-primary);
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-lg);
+      position: relative;
+      z-index: 1;
+    }
+
+    .philosophy-card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl) var(--spacing-lg);
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+
+    .philosophy-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-6px);
+      border-color: rgba(255, 107, 0, 0.3);
+    }
+
+    .philosophy-card__icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto var(--spacing-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(255, 107, 0, 0.15), rgba(255, 107, 0, 0.05));
+      border-radius: 50%;
+    }
+
+    .philosophy-card__icon svg {
+      width: 36px;
+      height: 36px;
+      color: var(--color-primary);
+    }
+
+    .philosophy-card__label {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .philosophy-card__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: var(--spacing-sm);
+      line-height: 1.5;
+    }
+
+    .philosophy-card__text {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.8;
+    }
+
+    /* --- Company Info Table Section --- */
+    .company-info-section {
+      padding: var(--spacing-4xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-table-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--color-border);
+    }
+
+    /* --- Timeline / History Section --- */
+    .history-section {
+      padding: var(--spacing-4xl) 0;
+      background-color: var(--color-bg-sub);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--color-primary), rgba(255, 107, 0, 0.2));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: var(--spacing-xl);
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item__dot {
+      position: absolute;
+      left: -33px;
+      top: 4px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      border: 3px solid var(--color-bg-sub);
+      box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+      z-index: 1;
+    }
+
+    .timeline-item__date {
+      font-family: var(--font-en);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    .timeline-item__content {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-md) var(--spacing-lg);
+      box-shadow: var(--shadow-sm);
+      border-left: 3px solid var(--color-primary);
+    }
+
+    .timeline-item__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-item__text {
+      font-size: 0.875rem;
+      color: var(--color-text-sub);
+      line-height: 1.7;
+    }
+
+    /* --- Access Section --- */
+    .access-section {
+      padding: var(--spacing-4xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xl);
+      align-items: start;
+    }
+
+    .access-map {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: linear-gradient(135deg, #e8ecf1 0%, #d1d8e0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-border);
+    }
+
+    .access-map__placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--color-text-light);
+    }
+
+    .access-map__placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.4;
+    }
+
+    .access-map__placeholder span {
+      font-size: 0.875rem;
+    }
+
+    .access-info__item {
+      display: flex;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-sm) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .access-info__item:last-child {
+      border-bottom: none;
+    }
+
+    .access-info__icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 107, 0, 0.08);
+      border-radius: var(--radius-md);
+      color: var(--color-primary);
+    }
+
+    .access-info__icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .access-info__label {
+      font-size: 0.75rem;
+      color: var(--color-text-light);
+      font-weight: 500;
+      margin-bottom: 0.125rem;
+    }
+
+    .access-info__text {
+      font-size: 0.9375rem;
+      color: var(--color-text-main);
+      line-height: 1.6;
+    }
+
+    /* --- CTA Section (About page) --- */
+    .about-cta {
+      position: relative;
+      padding: var(--spacing-4xl) 0;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .about-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .about-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .about-cta__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-cta h2 {
+      color: var(--color-white);
+      font-size: 2rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .about-cta h2::after {
+      display: none;
+    }
+
+    .about-cta p {
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: var(--spacing-xl);
+      font-size: 1.05rem;
+    }
+
+    /* --- Responsive Styles for About Page --- */
+    @media (max-width: 1023px) {
+      .ceo-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+      }
+
+      .ceo-photo {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .access-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .ceo-content__title {
+        font-size: 1.375rem;
+      }
+
+      .ceo-content__text {
+        font-size: 0.875rem;
+        line-height: 1.9;
+      }
+
+      .philosophy-card {
+        padding: var(--spacing-lg) var(--spacing-md);
+      }
+
+      .philosophy-card__title {
+        font-size: 1.125rem;
+      }
+
+      .timeline {
+        padding-left: 32px;
+      }
+
+      .timeline::before {
+        left: 11px;
+      }
+
+      .timeline-item__dot {
+        left: -28px;
+        width: 14px;
+        height: 14px;
+      }
+
+      .timeline-item__content {
+        padding: var(--spacing-sm) var(--spacing-md);
+      }
+
+      .about-cta h2 {
+        font-size: 1.5rem;
+      }
+
+      .access-map {
+        aspect-ratio: 4 / 3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loading-screen__logo">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+        <circle cx="20" cy="20" r="18" stroke="#FF6B00" stroke-width="1.5" opacity="0.3"/>
+        <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+        <circle cx="20" cy="22" r="4" fill="white"/>
+        <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="10" cy="20" r="2" fill="white" opacity="0.5"/>
+        <circle cx="30" cy="20" r="2" fill="white" opacity="0.5"/>
+        <circle cx="20" cy="32" r="2" fill="white" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="loading-screen__text" style="color:rgba(255,255,255,0.4);font-family:'Inter',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;margin-top:2rem;">SKYSCOPE DRONE SERVICES</div>
+    <div class="loading-screen__progress"><div class="loading-screen__progress-bar"></div></div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Page Transition -->
+  <div class="page-transition active"></div>
+
+  <!-- Header -->
+  <header class="header header--subpage" role="banner">
+    <div class="header__inner">
+      <a href="../index.html" class="header__logo" aria-label="SkyScope ホーム">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+          <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+          <circle cx="20" cy="22" r="4" fill="currentColor"/>
+          <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="10" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="30" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="20" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+        </svg>
+        <span class="header__logo-text">
+          <span class="header__logo-main">SKYSCOPE</span>
+          <span class="header__logo-sub">DRONE SERVICES</span>
+        </span>
+      </a>
+
+      <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="header__nav-list">
+          <li><a href="../index.html" class="header__nav-link">ホーム</a></li>
+          <li><a href="about.html" class="header__nav-link active">会社概要</a></li>
+          <li><a href="services.html" class="header__nav-link">業務内容</a></li>
+          <li><a href="news.html" class="header__nav-link">ニュース</a></li>
+          <li><a href="works.html" class="header__nav-link">成果物紹介</a></li>
+          <li><a href="equipment.html" class="header__nav-link">機体紹介</a></li>
+        </ul>
+        <a href="services.html#contact" class="header__cta">
+          お問い合わせ
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
+    <div class="mobile-nav__inner">
+      <a href="../index.html" class="mobile-nav__link">ホーム</a>
+      <a href="about.html" class="mobile-nav__link">会社概要</a>
+      <a href="services.html" class="mobile-nav__link">業務内容</a>
+      <a href="news.html" class="mobile-nav__link">ニュース</a>
+      <a href="works.html" class="mobile-nav__link">成果物紹介</a>
+      <a href="equipment.html" class="mobile-nav__link">機体紹介</a>
+      <a href="services.html#contact" class="mobile-nav__link" style="color: var(--color-primary);">お問い合わせ</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Header with Background Image -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1591389703635-e15a07b842d7?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920'); background-size: cover; background-position: center;">
+      <div class="page-header__content">
+        <p class="page-header__en">About Us</p>
+        <h1 class="page-header__title">会社概要</h1>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item">
+            <a href="../index.html" class="breadcrumb__link">ホーム</a>
+          </li>
+          <li class="breadcrumb__item">
+            <span class="breadcrumb__current">会社概要</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- CEO Greeting Section -->
+    <section class="ceo-section" id="greeting">
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">Message</span>
+          <h2>代表挨拶</h2>
+        </div>
+
+        <div class="ceo-grid">
+          <div class="ceo-photo fade-in-left">
+            <div class="ceo-photo__placeholder">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="28" r="14" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 68C12 54 24 44 40 44C56 44 68 54 68 68" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span>代表取締役写真</span>
+            </div>
+          </div>
+
+          <div class="ceo-content fade-in-right">
+            <p class="ceo-content__label">CEO Message</p>
+            <h3 class="ceo-content__title">ドローン技術で、<br>社会の課題を空から解決する。</h3>
+
+            <p class="ceo-content__text">
+              私たちSkyScope株式会社は、「空から、社会の未来を支える」という想いのもと、2026年に設立いたしました。日本が直面するインフラの老朽化、労働力不足、農業の担い手減少といった社会課題は、年々深刻さを増しています。私たちは、ドローンという先端技術を通じて、これらの課題を解決し、社会のより良い未来に貢献したいと考えています。
+            </p>
+
+            <p class="ceo-content__text">
+              創業以来、測量・空撮・点検・農薬散布・機体販売と、ドローンに関するあらゆるサービスをワンストップで提供してまいりました。お客様の現場一つひとつに真摯に向き合い、安全を最優先としながら、最適なソリューションをご提案することが私たちの使命です。
+            </p>
+
+            <p class="ceo-content__text">
+              技術の進化は留まることを知りません。私たちは常に最新の技術と知見を取り入れ、パイロットの技術向上に努め、お客様に最高品質のサービスを提供し続けます。ドローンの可能性は無限大です。空という新たな視点から、日本の産業とインフラの革新を牽引してまいります。
+            </p>
+
+            <p class="ceo-content__text">
+              すべてのお客様、パートナーの皆様に心より感謝申し上げますとともに、今後とも変わらぬご支援を賜りますようお願い申し上げます。
+            </p>
+
+            <div class="ceo-content__signature">
+              <span class="ceo-content__role">SkyScope株式会社 代表取締役</span>
+              <span class="ceo-content__name">山田 太郎</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="float-element float-element--circle float-element--anim-1" style="width:20px;height:20px;top:15%;left:5%;"></div>
+      <div class="float-element float-element--square float-element--anim-2" style="width:15px;height:15px;top:70%;right:8%;"></div>
+    </section>
+
+    <!-- Wave Divider: CEO to Philosophy -->
+    <div class="section-divider section-divider--wave section-divider--dark">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C360,0 720,40 1080,10 C1260,-5 1380,30 1440,20 L1440,60 Z"/></svg>
+    </div>
+
+    <!-- Mission / Vision / Values Section -->
+    <section class="philosophy-section" id="philosophy">
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">Philosophy</span>
+          <h2>企業理念</h2>
+        </div>
+
+        <div class="philosophy-grid">
+          <!-- Mission -->
+          <div class="philosophy-card tilt-card fade-in delay-1">
+            <div class="philosophy-card__icon">
+              <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="18" r="15"/>
+                <circle cx="18" cy="18" r="9"/>
+                <circle cx="18" cy="18" r="3" fill="currentColor"/>
+                <path d="M18 3V7M18 29V33M3 18H7M29 18H33"/>
+              </svg>
+            </div>
+            <p class="philosophy-card__label">Mission</p>
+            <h3 class="philosophy-card__title">空から、社会の<br>未来を支える。</h3>
+            <p class="philosophy-card__text">ドローン技術を通じて、インフラ・農業・建設をはじめとする日本の産業基盤を支え、より安全で持続可能な社会の実現に貢献します。</p>
+          </div>
+
+          <!-- Vision -->
+          <div class="philosophy-card tilt-card fade-in delay-2">
+            <div class="philosophy-card__icon">
+              <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 5L21 12L29 13L23 19L25 27L18 23L11 27L13 19L7 13L15 12L18 5Z"/>
+              </svg>
+            </div>
+            <p class="philosophy-card__label">Vision</p>
+            <h3 class="philosophy-card__title">ドローン技術で<br>日本のインフラを革新する。</h3>
+            <p class="philosophy-card__text">最先端のドローン技術とデータ分析を融合させ、日本全国のインフラ維持管理・産業効率化において、なくてはならないパートナーとなります。</p>
+          </div>
+
+          <!-- Values -->
+          <div class="philosophy-card tilt-card fade-in delay-3">
+            <div class="philosophy-card__icon">
+              <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6L22 14H30L24 20L26 28L18 24L10 28L12 20L6 14H14L18 6Z"/>
+                <path d="M18 14V20M15 17H21" stroke-width="2"/>
+              </svg>
+            </div>
+            <p class="philosophy-card__label">Values</p>
+            <h3 class="philosophy-card__title">安全第一・技術革新・<br>顧客満足</h3>
+            <p class="philosophy-card__text">すべての現場で安全を最優先に。たゆまぬ技術革新で品質を追求し、お客様の期待を超えるサービスを提供することを私たちの価値観とします。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="float-element float-element--ring float-element--anim-3" style="width:30px;height:30px;bottom:20%;left:12%;"></div>
+      <div class="float-element float-element--circle float-element--anim-1" style="width:16px;height:16px;top:25%;right:6%;"></div>
+    </section>
+
+    <!-- Wave Divider: Philosophy to Company Info -->
+    <div class="section-divider section-divider--wave section-divider--white">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C360,0 720,40 1080,10 C1260,-5 1380,30 1440,20 L1440,60 Z"/></svg>
+    </div>
+
+    <!-- Company Info Table Section -->
+    <section class="company-info-section" id="company-info">
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">Company Information</span>
+          <h2>会社情報</h2>
+        </div>
+
+        <div class="info-table-wrap fade-in">
+          <table class="info-table">
+            <tbody>
+              <tr>
+                <th>会社名</th>
+                <td>SkyScope株式会社（スカイスコープ）</td>
+              </tr>
+              <tr>
+                <th>設立</th>
+                <td>2026年1月</td>
+              </tr>
+              <tr>
+                <th>代表取締役</th>
+                <td>山田 太郎（やまだ たろう）</td>
+              </tr>
+              <tr>
+                <th>所在地</th>
+                <td>〒100-0001<br>東京都千代田区千代田1-1-1 スカイスコープビル5F</td>
+              </tr>
+              <tr>
+                <th>資本金</th>
+                <td>1,000万円</td>
+              </tr>
+              <tr>
+                <th>事業内容</th>
+                <td>
+                  ドローン測量<br>
+                  空撮サービス<br>
+                  インフラ点検<br>
+                  農薬散布<br>
+                  機体販売・メンテナンス
+                </td>
+              </tr>
+              <tr>
+                <th>取得許認可</th>
+                <td>
+                  国土交通省 無人航空機飛行許可・承認<br>
+                  第二種電気工事士（点検業務関連）
+                </td>
+              </tr>
+              <tr>
+                <th>加盟団体</th>
+                <td>一般社団法人日本UAS産業振興協議会（JUIDA）</td>
+              </tr>
+              <tr>
+                <th>電話番号</th>
+                <td>000-0000-0000</td>
+              </tr>
+              <tr>
+                <th>メールアドレス</th>
+                <td>info@skyscope-drone.example</td>
+              </tr>
+              <tr>
+                <th>営業時間</th>
+                <td>平日 9:00〜18:00（土日祝休み）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="float-element float-element--circle float-element--anim-1" style="width:20px;height:20px;top:15%;left:5%;"></div>
+      <div class="float-element float-element--square float-element--anim-2" style="width:12px;height:12px;bottom:25%;right:10%;"></div>
+    </section>
+
+    <!-- Parallax Vision Section -->
+    <section class="parallax-section" data-parallax data-speed="0.3" style="background-image: url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920');">
+      <div class="parallax-section__panel glass-card">
+        <span class="en-title" style="color: var(--color-primary);">Our Vision</span>
+        <h2 style="color: white; font-size: 1.75rem; margin-bottom: var(--spacing-sm);">空から、日本の未来を支える</h2>
+        <p style="color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto;">ドローン技術で社会インフラの維持管理を効率化し、<br>持続可能な未来の実現に貢献します。</p>
+      </div>
+    </section>
+
+    <!-- Wave Divider: Parallax to History -->
+    <div class="section-divider section-divider--wave section-divider--bg">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C360,0 720,40 1080,10 C1260,-5 1380,30 1440,20 L1440,60 Z"/></svg>
+    </div>
+
+    <!-- History / Timeline Section -->
+    <section class="history-section" id="history">
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">History</span>
+          <h2>沿革</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item fade-in delay-1">
+            <div class="timeline-item__dot"></div>
+            <p class="timeline-item__date">2026.01</p>
+            <div class="timeline-item__content">
+              <h4 class="timeline-item__title">SkyScope株式会社設立</h4>
+              <p class="timeline-item__text">東京都千代田区にて会社設立。ドローン測量・空撮事業を開始。</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in delay-2">
+            <div class="timeline-item__dot"></div>
+            <p class="timeline-item__date">2026.02</p>
+            <div class="timeline-item__content">
+              <h4 class="timeline-item__title">コーポレートサイト開設</h4>
+              <p class="timeline-item__text">企業情報・サービス紹介のためのコーポレートサイトを公開。</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in delay-3">
+            <div class="timeline-item__dot"></div>
+            <p class="timeline-item__date">2026.03（予定）</p>
+            <div class="timeline-item__content">
+              <h4 class="timeline-item__title">インフラ点検事業開始</h4>
+              <p class="timeline-item__text">橋梁・ビル外壁・太陽光パネルなどのインフラ設備点検サービスを本格始動。</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in delay-4">
+            <div class="timeline-item__dot"></div>
+            <p class="timeline-item__date">2026.04（予定）</p>
+            <div class="timeline-item__content">
+              <h4 class="timeline-item__title">農薬散布サービス開始</h4>
+              <p class="timeline-item__text">農業分野への参入。ドローンによる精密農薬散布サービスを提供開始。</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in delay-5">
+            <div class="timeline-item__dot"></div>
+            <p class="timeline-item__date">2026.06（予定）</p>
+            <div class="timeline-item__content">
+              <h4 class="timeline-item__title">機体販売事業開始</h4>
+              <p class="timeline-item__text">産業用ドローンの販売・メンテナンスサービスを開始。購入後のサポート体制を構築。</p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in">
+            <div class="timeline-item__dot"></div>
+            <p class="timeline-item__date">2027〜（計画）</p>
+            <div class="timeline-item__content">
+              <h4 class="timeline-item__title">事業拡大・全国展開</h4>
+              <p class="timeline-item__text">大阪・名古屋・福岡を中心に地方拠点を展開。AI画像解析サービスの開発にも着手予定。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="float-element float-element--ring float-element--anim-3" style="width:25px;height:25px;top:20%;right:7%;"></div>
+      <div class="float-element float-element--circle float-element--anim-2" style="width:14px;height:14px;bottom:15%;left:8%;"></div>
+    </section>
+
+    <!-- Wave Divider: History to Access -->
+    <div class="section-divider section-divider--wave section-divider--white">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C360,0 720,40 1080,10 C1260,-5 1380,30 1440,20 L1440,60 Z"/></svg>
+    </div>
+
+    <!-- Access / Location Section -->
+    <section class="access-section" id="access">
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">Access</span>
+          <h2>アクセス</h2>
+        </div>
+
+        <div class="access-grid">
+          <div class="access-map fade-in-left">
+            <div class="access-map__placeholder">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 4C16.268 4 10 10.268 10 18C10 30 24 44 24 44C24 44 38 30 38 18C38 10.268 31.732 4 24 4Z"/>
+                <circle cx="24" cy="18" r="6"/>
+              </svg>
+              <span>Google Map 埋め込みエリア</span>
+            </div>
+          </div>
+
+          <div class="access-info fade-in-right">
+            <div class="access-info__item">
+              <div class="access-info__icon">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 8L10 2L17 8V17C17 17.5523 16.5523 18 16 18H4C3.44772 18 3 17.5523 3 17V8Z"/>
+                  <path d="M8 18V10H12V18"/>
+                </svg>
+              </div>
+              <div>
+                <p class="access-info__label">所在地</p>
+                <p class="access-info__text">〒100-0001<br>東京都千代田区千代田1-1-1<br>スカイスコープビル5F</p>
+              </div>
+            </div>
+
+            <div class="access-info__item">
+              <div class="access-info__icon">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 4H18V16H2V4Z"/>
+                  <path d="M2 4L10 11L18 4"/>
+                </svg>
+              </div>
+              <div>
+                <p class="access-info__label">最寄り駅</p>
+                <p class="access-info__text">東京メトロ各線「大手町駅」C13b出口より徒歩3分<br>JR各線「東京駅」丸の内北口より徒歩10分</p>
+              </div>
+            </div>
+
+            <div class="access-info__item">
+              <div class="access-info__icon">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="10" cy="10" r="8"/>
+                  <path d="M10 5V10L13 13"/>
+                </svg>
+              </div>
+              <div>
+                <p class="access-info__label">営業時間</p>
+                <p class="access-info__text">平日 9:00〜18:00<br>土日祝休み</p>
+              </div>
+            </div>
+
+            <div class="access-info__item">
+              <div class="access-info__icon">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.5 12.5V15C17.5 15.83 16.83 16.5 16 16.5C11.5 16.5 7.5 14.5 4.5 11.5C1.5 8.5 -0.5 4.5 -0.5 0C-0.5 -0.83 0.17 -1.5 1 -1.5H3.5C4.16 -1.5 4.73 -1.03 4.85 -0.38L5.65 4.12C5.75 4.67 5.56 5.23 5.15 5.6L3.85 6.9C5.35 9.65 7.85 12.15 10.6 13.65L11.9 12.35C12.27 11.98 12.83 11.79 13.38 11.89L17.88 12.69C18.53 12.81 19 13.38 19 14.04"/>
+                </svg>
+              </div>
+              <div>
+                <p class="access-info__label">お電話</p>
+                <p class="access-info__text">000-0000-0000</p>
+              </div>
+            </div>
+
+            <div class="access-info__item">
+              <div class="access-info__icon">
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 4H18V16H2V4Z"/>
+                  <path d="M2 4L10 11L18 4"/>
+                </svg>
+              </div>
+              <div>
+                <p class="access-info__label">メール</p>
+                <p class="access-info__text">info@skyscope-drone.example</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="float-element float-element--circle float-element--anim-1" style="width:18px;height:18px;top:20%;right:4%;"></div>
+      <div class="float-element float-element--square float-element--anim-3" style="width:14px;height:14px;bottom:30%;left:6%;"></div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+      <div class="container">
+        <div class="about-cta__content fade-in">
+          <h2>ドローンのことなら、お気軽にご相談ください</h2>
+          <p>測量・空撮・点検・農薬散布の無料見積もりから、機体の選定まで、専門スタッフが丁寧にお答えします。</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="services.html#contact" class="btn btn--secondary btn-magnetic">
+              お問い合わせはこちら
+              <span class="btn__arrow">→</span>
+            </a>
+            <a href="tel:000-0000-0000" class="btn btn--outline btn-magnetic" style="border-color: white;">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M16.5 12.69V14.94C16.5 15.48 16.08 15.93 15.54 15.98C14.88 16.05 14.23 16.05 13.5 15.98C10.3 15.55 7.29 14.27 4.76 12.24C2.43 10.39 0.55 8.02 -0.02 5.5C-0.02 4.98 0.39 4.55 0.93 4.5L3.18 4.5C3.68 4.5 4.11 4.86 4.18 5.36C4.34 6.53 4.66 7.67 5.13 8.74L3.57 10.31C5.15 12.79 7.21 14.85 9.69 16.43L11.26 14.87C12.33 15.34 13.47 15.66 14.64 15.82C15.14 15.89 15.5 16.32 15.5 16.82" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              000-0000-0000
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__logo">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+              <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+              <circle cx="20" cy="22" r="4" fill="currentColor"/>
+              <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="10" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+              <circle cx="30" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+              <circle cx="20" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <span class="header__logo-text">
+              <span class="header__logo-main">SKYSCOPE</span>
+              <span class="header__logo-sub">DRONE SERVICES</span>
+            </span>
+          </a>
+          <p class="footer__desc">SkyScope（スカイスコープ）は、先端ドローン技術を活用し、測量・空撮・点検・農薬散布・機体販売を行うドローンサービス企業です。</p>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">サービス</h4>
+          <nav class="footer__links">
+            <a href="services.html" class="footer__link">ドローン測量</a>
+            <a href="services.html" class="footer__link">空撮サービス</a>
+            <a href="services.html" class="footer__link">点検サービス</a>
+            <a href="services.html" class="footer__link">農薬散布</a>
+            <a href="services.html" class="footer__link">機体販売</a>
+          </nav>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">企業情報</h4>
+          <nav class="footer__links">
+            <a href="about.html" class="footer__link">会社概要</a>
+            <a href="news.html" class="footer__link">ニュース</a>
+            <a href="works.html" class="footer__link">成果物紹介</a>
+            <a href="equipment.html" class="footer__link">機体紹介</a>
+          </nav>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">お問い合わせ</h4>
+          <div class="footer__links">
+            <span class="footer__link">TEL: 000-0000-0000</span>
+            <span class="footer__link">受付: 平日 9:00〜18:00</span>
+            <span class="footer__link">info@skyscope-drone.example</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 SkyScope Drone Services. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Top Button -->
+  <button class="page-top" aria-label="ページトップへ戻る">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 16V4M10 4L4 10M10 4L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

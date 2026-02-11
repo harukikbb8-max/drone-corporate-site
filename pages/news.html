@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ニュース | SkyScope ドローンサービス</title>
+  <meta name="description" content="SkyScope（スカイスコープ）の最新ニュース、実績紹介、メディア掲載情報をお届けします。ドローン測量・空撮・点検のプロフェッショナル企業。">
+  <meta property="og:title" content="ニュース | SkyScope ドローンサービス">
+  <meta property="og:description" content="SkyScope（スカイスコープ）の最新ニュース、プロジェクト実績、メディア掲載情報。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* --- Page Header --- */
+    .page-header {
+      background: linear-gradient(135deg, #0F1A30 0%, #1B2A4A 40%, #2A3F6A 100%);
+      padding: 160px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at 70% 50%, rgba(255, 107, 0, 0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .page-header__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .page-header__content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-header__en {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #FF6B00;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header__title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .page-header__desc {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    /* --- Breadcrumb --- */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: #FF6B00;
+    }
+
+    .breadcrumb__separator {
+      font-size: 0.625rem;
+      opacity: 0.5;
+    }
+
+    .breadcrumb__current {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* --- Filter Section --- */
+    .news-filter-section {
+      padding: 4rem 0 0;
+      position: relative;
+    }
+
+    /* --- News Cards Grid --- */
+    .news-cards-section {
+      padding: 2rem 0 6rem;
+      position: relative;
+    }
+
+    .news-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+
+    .news-card {
+      display: block;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(27, 42, 74, 0.06);
+      transition: all 0.35s ease;
+      border: 1px solid rgba(27, 42, 74, 0.06);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .news-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(27, 42, 74, 0.12);
+      border-color: rgba(255, 107, 0, 0.2);
+    }
+
+    .news-card__body {
+      padding: 1.75rem;
+    }
+
+    .news-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.875rem;
+    }
+
+    .news-card__date {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #8896AB;
+      letter-spacing: 0.02em;
+    }
+
+    .news-card__title {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: #1B2A4A;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+      transition: color 0.3s ease;
+    }
+
+    .news-card:hover .news-card__title {
+      color: #FF6B00;
+    }
+
+    .news-card__desc {
+      font-size: 0.875rem;
+      color: #6B7A8D;
+      line-height: 1.8;
+    }
+
+    .news-card__arrow {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 1.75rem 1.5rem;
+    }
+
+    .news-card__arrow-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 107, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .news-card:hover .news-card__arrow-icon {
+      background: #FF6B00;
+    }
+
+    .news-card__arrow-icon svg {
+      color: #FF6B00;
+      transition: color 0.3s ease;
+    }
+
+    .news-card:hover .news-card__arrow-icon svg {
+      color: #ffffff;
+    }
+
+    /* --- Category Border Accent --- */
+    .news-card[data-category="お知らせ"] {
+      border-top: 3px solid #FF6B00;
+    }
+
+    .news-card[data-category="実績"] {
+      border-top: 3px solid #10B981;
+    }
+
+    .news-card[data-category="メディア"] {
+      border-top: 3px solid #8B5CF6;
+    }
+
+    /* --- Hidden state for filtering --- */
+    .news-card.hidden {
+      display: none;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 1023px) {
+      .page-header {
+        padding: 140px 0 60px;
+      }
+
+      .page-header__title {
+        font-size: 2rem;
+      }
+
+      .news-cards-grid {
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .page-header {
+        padding: 120px 0 48px;
+      }
+
+      .page-header__title {
+        font-size: 1.5rem;
+      }
+
+      .page-header__desc {
+        font-size: 0.875rem;
+      }
+
+      .news-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .news-card__body {
+        padding: 1.25rem;
+      }
+
+      .news-card__title {
+        font-size: 0.9375rem;
+      }
+
+      .news-card__desc {
+        font-size: 0.8125rem;
+      }
+
+      .news-card__arrow {
+        padding: 0 1.25rem 1.25rem;
+      }
+
+      .news-filter-section {
+        padding: 2.5rem 0 0;
+      }
+
+      .news-cards-section {
+        padding: 1.5rem 0 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loading-screen__logo">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+        <circle cx="20" cy="20" r="18" stroke="#FF6B00" stroke-width="1.5" opacity="0.3"/>
+        <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+        <circle cx="20" cy="22" r="4" fill="white"/>
+        <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="10" cy="20" r="2" fill="white" opacity="0.5"/>
+        <circle cx="30" cy="20" r="2" fill="white" opacity="0.5"/>
+        <circle cx="20" cy="32" r="2" fill="white" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="loading-screen__text" style="color:rgba(255,255,255,0.4);font-family:'Inter',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;margin-top:2rem;">SKYSCOPE DRONE SERVICES</div>
+    <div class="loading-screen__progress"><div class="loading-screen__progress-bar"></div></div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Page Transition -->
+  <div class="page-transition active"></div>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="../index.html" class="header__logo" aria-label="SkyScope ホーム">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+          <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+          <circle cx="20" cy="22" r="4" fill="currentColor"/>
+          <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="10" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="30" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="20" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+        </svg>
+        <span class="header__logo-text">
+          <span class="header__logo-main">SKYSCOPE</span>
+          <span class="header__logo-sub">DRONE SERVICES</span>
+        </span>
+      </a>
+
+      <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="header__nav-list">
+          <li><a href="../index.html" class="header__nav-link">ホーム</a></li>
+          <li><a href="about.html" class="header__nav-link">会社概要</a></li>
+          <li><a href="services.html" class="header__nav-link">業務内容</a></li>
+          <li><a href="news.html" class="header__nav-link active">ニュース</a></li>
+          <li><a href="works.html" class="header__nav-link">成果物紹介</a></li>
+          <li><a href="equipment.html" class="header__nav-link">機体紹介</a></li>
+        </ul>
+        <a href="services.html#contact" class="header__cta btn-magnetic">
+          お問い合わせ
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
+    <div class="mobile-nav__inner">
+      <a href="../index.html" class="mobile-nav__link">ホーム</a>
+      <a href="about.html" class="mobile-nav__link">会社概要</a>
+      <a href="services.html" class="mobile-nav__link">業務内容</a>
+      <a href="news.html" class="mobile-nav__link">ニュース</a>
+      <a href="works.html" class="mobile-nav__link">成果物紹介</a>
+      <a href="equipment.html" class="mobile-nav__link">機体紹介</a>
+      <a href="services.html#contact" class="mobile-nav__link" style="color: var(--color-primary);">お問い合わせ</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1686008673889-1817ec20e302?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920');">
+      <div class="page-header__bg" style="background-image: url('https://images.unsplash.com/photo-1686008673889-1817ec20e302?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920');"></div>
+      <div class="container">
+        <div class="page-header__content fade-in">
+          <nav class="breadcrumb" aria-label="パンくずリスト">
+            <a href="../index.html">ホーム</a>
+            <span class="breadcrumb__separator">&#9654;</span>
+            <span class="breadcrumb__current">ニュース</span>
+          </nav>
+          <p class="page-header__en">News</p>
+          <h1 class="page-header__title">ニュース</h1>
+          <p class="page-header__desc">SkyScope ドローンサービスの最新情報、プロジェクト実績、メディア掲載情報をお届けします。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider: Header to Filter -->
+    <div class="section-divider section-divider--wave section-divider--bg">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C360,0 720,40 1080,10 C1260,-5 1380,30 1440,20 L1440,60 Z"/></svg>
+    </div>
+
+    <!-- Filter Section -->
+    <section class="news-filter-section">
+      <div class="container">
+        <div class="filter-buttons fade-in">
+          <button class="filter-btn btn-magnetic active" data-filter="all">全て</button>
+          <button class="filter-btn btn-magnetic" data-filter="お知らせ">お知らせ</button>
+          <button class="filter-btn btn-magnetic" data-filter="実績">実績</button>
+          <button class="filter-btn btn-magnetic" data-filter="メディア">メディア</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Cards -->
+    <section class="news-cards-section">
+      <!-- Floating Decorative Elements -->
+      <div class="float-element float-element--circle float-element--anim-1" style="width:20px;height:20px;top:10%;left:4%;"></div>
+      <div class="float-element float-element--square float-element--anim-2" style="width:14px;height:14px;top:55%;right:6%;"></div>
+      <div class="float-element float-element--ring float-element--anim-3" style="width:28px;height:28px;bottom:15%;left:8%;"></div>
+
+      <div class="container">
+        <div class="news-cards-grid">
+
+          <!-- News Item 1 -->
+          <a href="#" class="news-card fade-in delay-1" data-category="お知らせ">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">2026.02.10</span>
+                <span class="tag tag--news">お知らせ</span>
+              </div>
+              <h3 class="news-card__title">コーポレートサイトを全面リニューアルしました</h3>
+              <p class="news-card__desc">より多くのお客様に弊社のサービスを分かりやすくお届けするため、コーポレートサイトをリニューアルいたしました。サービス内容や実績を充実させ、お問い合わせまでの導線を改善しています。</p>
+            </div>
+            <div class="news-card__arrow">
+              <span class="news-card__arrow-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- News Item 2 -->
+          <a href="#" class="news-card fade-in delay-2" data-category="実績">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">2026.02.03</span>
+                <span class="tag tag--achievement">実績</span>
+              </div>
+              <h3 class="news-card__title">大規模太陽光発電所の赤外線点検業務を完了しました</h3>
+              <p class="news-card__desc">茨城県内の50MWメガソーラー施設にて、赤外線カメラ搭載ドローンによるパネル異常検知点検を実施。約20万枚のパネルを3日間で効率的に点検し、不具合箇所の早期発見に貢献しました。</p>
+            </div>
+            <div class="news-card__arrow">
+              <span class="news-card__arrow-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- News Item 3 -->
+          <a href="#" class="news-card fade-in delay-3" data-category="メディア">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">2026.01.25</span>
+                <span class="tag tag--media">メディア</span>
+              </div>
+              <h3 class="news-card__title">建設業界誌「ドローンテクノロジー」に弊社の測量技術が特集されました</h3>
+              <p class="news-card__desc">月刊「ドローンテクノロジー」2026年2月号にて、弊社のLiDAR測量技術と3Dモデリングによる建設現場DX推進の取り組みが6ページにわたり紹介されました。</p>
+            </div>
+            <div class="news-card__arrow">
+              <span class="news-card__arrow-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- News Item 4 -->
+          <a href="#" class="news-card fade-in delay-4" data-category="お知らせ">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">2026.01.15</span>
+                <span class="tag tag--news">お知らせ</span>
+              </div>
+              <h3 class="news-card__title">新型測量用ドローン「SkyMapper Pro」の取り扱いを開始しました</h3>
+              <p class="news-card__desc">RTK対応の高精度測量用ドローン「SkyMapper Pro」の販売を開始いたしました。最大飛行時間45分、測位精度1cm以内を実現し、大規模現場の測量業務を大幅に効率化します。</p>
+            </div>
+            <div class="news-card__arrow">
+              <span class="news-card__arrow-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- News Item 5 -->
+          <a href="#" class="news-card fade-in delay-5" data-category="実績">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">2026.01.08</span>
+                <span class="tag tag--achievement">実績</span>
+              </div>
+              <h3 class="news-card__title">北陸自動車道の橋梁点検プロジェクトを完了しました</h3>
+              <p class="news-card__desc">NEXCO中日本様よりご依頼いただいた北陸自動車道の橋梁12基の近接目視点検を、ドローンを活用して安全かつ効率的に完了しました。従来工法と比較し、点検期間を約60%短縮しました。</p>
+            </div>
+            <div class="news-card__arrow">
+              <span class="news-card__arrow-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- News Item 6 -->
+          <a href="#" class="news-card fade-in delay-1" data-category="お知らせ">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">2025.12.20</span>
+                <span class="tag tag--news">お知らせ</span>
+              </div>
+              <h3 class="news-card__title">国土交通省「無人航空機操縦者技能証明」一等資格を5名が取得</h3>
+              <p class="news-card__desc">弊社パイロット5名が国土交通省の一等無人航空機操縦者技能証明を新たに取得しました。これにより有資格パイロットは計12名となり、レベル4飛行を含むあらゆる業務に対応可能です。</p>
+            </div>
+            <div class="news-card__arrow">
+              <span class="news-card__arrow-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- News Item 7 -->
+          <a href="#" class="news-card fade-in delay-2" data-category="メディア">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">2025.12.10</span>
+                <span class="tag tag--media">メディア</span>
+              </div>
+              <h3 class="news-card__title">NHK「クローズアップ現代」にてドローン点検の取り組みが放送されました</h3>
+              <p class="news-card__desc">NHK総合「クローズアップ現代」のインフラ老朽化問題特集にて、弊社が手がけるドローンによる橋梁・トンネル点検の取り組みが紹介されました。安全性向上とコスト削減の両立が注目されています。</p>
+            </div>
+            <div class="news-card__arrow">
+              <span class="news-card__arrow-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- News Item 8 -->
+          <a href="#" class="news-card fade-in delay-3" data-category="実績">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">2025.11.28</span>
+                <span class="tag tag--achievement">実績</span>
+              </div>
+              <h3 class="news-card__title">農業法人との年間契約を締結 - 圃場管理の本格運用を開始</h3>
+              <p class="news-card__desc">新潟県の大規模農業法人様と年間契約を締結し、水稲300haの農薬散布および生育状況モニタリングの定期運用を開始しました。マルチスペクトルカメラによる生育診断も提供します。</p>
+            </div>
+            <div class="news-card__arrow">
+              <span class="news-card__arrow-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- News Item 9 -->
+          <a href="#" class="news-card fade-in delay-4" data-category="お知らせ">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">2025.11.15</span>
+                <span class="tag tag--news">お知らせ</span>
+              </div>
+              <h3 class="news-card__title">株式会社ゼンリンとの業務提携を発表しました</h3>
+              <p class="news-card__desc">地図情報大手の株式会社ゼンリン様と、ドローン測量データを活用した高精度3Dマップ作成に関する業務提携契約を締結いたしました。都市部の3Dデジタルツイン構築に共同で取り組みます。</p>
+            </div>
+            <div class="news-card__arrow">
+              <span class="news-card__arrow-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- News Item 10 -->
+          <a href="#" class="news-card fade-in delay-5" data-category="メディア">
+            <div class="news-card__body">
+              <div class="news-card__meta">
+                <span class="news-card__date">2025.11.01</span>
+                <span class="tag tag--media">メディア</span>
+              </div>
+              <h3 class="news-card__title">日経新聞「テクノロジー企業特集」に掲載されました</h3>
+              <p class="news-card__desc">日本経済新聞の地方テクノロジー企業特集にて、弊社のドローンサービス事業と地方インフラ維持への貢献が取り上げられました。今後の事業拡大計画についても代表インタビューが掲載されています。</p>
+            </div>
+            <div class="news-card__arrow">
+              <span class="news-card__arrow-icon">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider: Cards to Footer -->
+    <div class="section-divider section-divider--wave section-divider--dark">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 C240,20 480,50 720,30 C960,10 1200,45 1440,15 L1440,60 Z"/></svg>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__logo">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+              <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+              <circle cx="20" cy="22" r="4" fill="currentColor"/>
+              <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="10" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+              <circle cx="30" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+              <circle cx="20" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <span class="header__logo-text">
+              <span class="header__logo-main">SKYSCOPE</span>
+              <span class="header__logo-sub">DRONE SERVICES</span>
+            </span>
+          </a>
+          <p class="footer__desc">SkyScope（スカイスコープ）は、先端ドローン技術を活用し、測量・空撮・点検・農薬散布・機体販売を行うドローンサービス企業です。</p>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">サービス</h4>
+          <nav class="footer__links">
+            <a href="services.html" class="footer__link">ドローン測量</a>
+            <a href="services.html" class="footer__link">空撮サービス</a>
+            <a href="services.html" class="footer__link">点検サービス</a>
+            <a href="services.html" class="footer__link">農薬散布</a>
+            <a href="services.html" class="footer__link">機体販売</a>
+          </nav>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">企業情報</h4>
+          <nav class="footer__links">
+            <a href="about.html" class="footer__link">会社概要</a>
+            <a href="news.html" class="footer__link">ニュース</a>
+            <a href="works.html" class="footer__link">成果物紹介</a>
+            <a href="equipment.html" class="footer__link">機体紹介</a>
+          </nav>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">お問い合わせ</h4>
+          <div class="footer__links">
+            <span class="footer__link">TEL: 000-0000-0000</span>
+            <span class="footer__link">受付: 平日 9:00〜18:00</span>
+            <span class="footer__link">info@skyscope-drone.example</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 SkyScope Drone Services. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Top Button -->
+  <button class="page-top btn-magnetic" aria-label="ページトップへ戻る">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 16V4M10 4L4 10M10 4L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

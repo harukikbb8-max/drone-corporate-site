@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>業務内容 | SkyScope ドローンサービス</title>
+  <meta name="description" content="SkyScope（スカイスコープ）の業務内容。ドローン測量、空撮サービス、点検サービス、農薬散布、機体販売の5つのサービスを詳しくご紹介します。">
+  <meta property="og:title" content="業務内容 | SkyScope ドローンサービス">
+  <meta property="og:description" content="測量・空撮・点検・農薬散布・機体販売。SkyScope の5つのコアサービスをご紹介します。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* --- Page Header Enhancement --- */
+    .page-header {
+      position: relative;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0F1A30 0%, #1B2A4A 40%, #2A3F6A 100%);
+      overflow: hidden;
+      margin-top: 0;
+    }
+
+    .page-header__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15,26,48,0.75) 0%, rgba(27,42,74,0.6) 40%, rgba(42,63,106,0.5) 100%);
+      z-index: 1;
+    }
+
+    .page-header__content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-header__deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 107, 0, 0.1);
+      z-index: 2;
+    }
+
+    .page-header__deco-circle--1 {
+      width: 400px;
+      height: 400px;
+      top: -150px;
+      right: -100px;
+    }
+
+    .page-header__deco-circle--2 {
+      width: 250px;
+      height: 250px;
+      bottom: -80px;
+      left: -50px;
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .page-header__deco-circle--3 {
+      width: 120px;
+      height: 120px;
+      top: 50%;
+      right: 20%;
+      background: rgba(255, 107, 0, 0.03);
+    }
+
+    /* --- Service Detail Blocks --- */
+    .service-detail {
+      scroll-margin-top: 100px;
+    }
+
+    .service-detail__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-3xl);
+      align-items: center;
+    }
+
+    .service-detail:nth-child(even) .service-detail__inner {
+      direction: rtl;
+    }
+
+    .service-detail:nth-child(even) .service-detail__inner > * {
+      direction: ltr;
+    }
+
+    .service-detail__visual {
+      position: relative;
+    }
+
+    .service-detail__icon-box {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, #F5F7FA 0%, #E8ECF2 100%);
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-detail__icon-box::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -20%;
+      width: 60%;
+      height: 60%;
+      border-radius: 50%;
+      background: rgba(255, 107, 0, 0.06);
+    }
+
+    .service-detail__icon-box::after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      left: -10%;
+      width: 40%;
+      height: 40%;
+      border-radius: 50%;
+      background: rgba(27, 42, 74, 0.04);
+    }
+
+    .service-detail__icon-box svg {
+      width: 120px;
+      height: 120px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-detail__badge {
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      width: 64px;
+      height: 64px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-en);
+      font-size: 1.25rem;
+      font-weight: 900;
+      box-shadow: 0 4px 16px rgba(255, 107, 0, 0.3);
+      z-index: 2;
+    }
+
+    .service-detail__content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+
+    .service-detail__en {
+      font-family: var(--font-en);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .service-detail__title {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--color-secondary);
+      line-height: 1.4;
+    }
+
+    .service-detail__desc {
+      font-size: 1rem;
+      color: var(--color-text-sub);
+      line-height: 1.9;
+    }
+
+    .service-detail__features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-xs);
+    }
+
+    .service-detail__feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.9375rem;
+      color: var(--color-text-main);
+      line-height: 1.5;
+    }
+
+    .service-detail__feature-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: rgba(255, 107, 0, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .service-detail__feature-icon svg {
+      width: 12px;
+      height: 12px;
+      color: var(--color-primary);
+    }
+
+    .service-detail__usecases {
+      background: var(--color-bg-sub);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-md);
+      margin-top: var(--spacing-xs);
+    }
+
+    .service-detail__usecases-title {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      margin-bottom: var(--spacing-xs);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .service-detail__usecases-title svg {
+      width: 16px;
+      height: 16px;
+      color: var(--color-primary);
+    }
+
+    .service-detail__usecases-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .service-detail__usecase-tag {
+      display: inline-block;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-secondary);
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      transition: all var(--transition-fast);
+    }
+
+    .service-detail__usecase-tag:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    /* --- Service Divider --- */
+    .service-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-primary), transparent);
+      margin: 0 auto;
+      border-radius: var(--radius-full);
+    }
+
+    /* --- Service Flow --- */
+    .flow-section {
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flow-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .flow-section .section-title .en-title {
+      color: var(--color-primary);
+    }
+
+    .flow-section .section-title h2 {
+      color: var(--color-white);
+    }
+
+    .flow-section .section-title h2::after {
+      background: var(--color-primary);
+    }
+
+    .flow-section .section-subtitle {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .flow-steps {
+      display: flex;
+      gap: 0;
+      position: relative;
+      justify-content: center;
+    }
+
+    .flow-step {
+      flex: 1;
+      max-width: 220px;
+      text-align: center;
+      position: relative;
+      padding: 0 var(--spacing-sm);
+    }
+
+    .flow-step__number {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto var(--spacing-sm);
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-en);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--color-white);
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 20px rgba(255, 107, 0, 0.3);
+    }
+
+    .flow-step__connector {
+      position: absolute;
+      top: 32px;
+      left: calc(50% + 32px);
+      width: calc(100% - 64px);
+      height: 2px;
+      background: rgba(255, 107, 0, 0.3);
+      z-index: 1;
+    }
+
+    .flow-step__connector::after {
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: -4px;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid rgba(255, 107, 0, 0.4);
+      border-right: 2px solid rgba(255, 107, 0, 0.4);
+      transform: rotate(45deg);
+    }
+
+    .flow-step:last-child .flow-step__connector {
+      display: none;
+    }
+
+    .flow-step__title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .flow-step__desc {
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+    }
+
+    /* --- CTA Enhanced --- */
+    .cta-services {
+      position: relative;
+      padding: var(--spacing-4xl) 0;
+      background: linear-gradient(135deg, var(--color-primary) 0%, #E05E00 100%);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .cta-services::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .cta-services::after {
+      content: '';
+      position: absolute;
+      bottom: -40%;
+      left: -8%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .cta-services__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-services h2 {
+      color: var(--color-white);
+      font-size: 2rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .cta-services p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.05rem;
+      margin-bottom: var(--spacing-xl);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-services__buttons {
+      display: flex;
+      gap: var(--spacing-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* --- Contact Section --- */
+    .contact-section {
+      background: var(--color-bg-sub);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: var(--spacing-3xl);
+      align-items: start;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+
+    .contact-info__title {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--color-secondary);
+      line-height: 1.5;
+    }
+
+    .contact-info__desc {
+      font-size: 1rem;
+      color: var(--color-text-sub);
+      line-height: 1.9;
+    }
+
+    .contact-info__items {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+
+    .contact-info__item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .contact-info__item-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 107, 0, 0.1);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-info__item-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--color-primary);
+    }
+
+    .contact-info__item-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-info__item-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-info__item-value {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-text-main);
+    }
+
+    .contact-form-wrapper {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-xl);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-form__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      margin-bottom: var(--spacing-md);
+      text-align: center;
+    }
+
+    .contact-form__group {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .contact-form__label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-form__label .required {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--color-white);
+      background: var(--color-primary);
+      padding: 0.1rem 0.5rem;
+      border-radius: var(--radius-full);
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .contact-form__input,
+    .contact-form__select,
+    .contact-form__textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-family: var(--font-ja);
+      font-size: 0.9375rem;
+      color: var(--color-text-main);
+      background: var(--color-bg-sub);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+      outline: none;
+    }
+
+    .contact-form__input:focus,
+    .contact-form__select:focus,
+    .contact-form__textarea:focus {
+      border-color: var(--color-primary);
+      background: var(--color-white);
+      box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.08);
+    }
+
+    .contact-form__input::placeholder,
+    .contact-form__textarea::placeholder {
+      color: var(--color-text-light);
+    }
+
+    .contact-form__textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form__select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .contact-form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-md);
+    }
+
+    .contact-form__submit {
+      width: 100%;
+      padding: 1rem 2rem;
+      font-family: var(--font-ja);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-white);
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      border: none;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--transition-base);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: var(--spacing-md);
+    }
+
+    .contact-form__submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 0, 0.35);
+    }
+
+    .contact-form__submit svg {
+      width: 18px;
+      height: 18px;
+      transition: transform var(--transition-fast);
+    }
+
+    .contact-form__submit:hover svg {
+      transform: translateX(4px);
+    }
+
+    .contact-form__note {
+      font-size: 0.75rem;
+      color: var(--color-text-light);
+      text-align: center;
+      margin-top: var(--spacing-sm);
+    }
+
+    /* --- Service Anchor Nav --- */
+    .service-nav {
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: var(--header-height);
+      z-index: 100;
+    }
+
+    .service-nav__list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .service-nav__list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .service-nav__link {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-sub);
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: all var(--transition-fast);
+    }
+
+    .service-nav__link:hover,
+    .service-nav__link.active {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-primary);
+    }
+
+    .service-nav__link svg {
+      width: 18px;
+      height: 18px;
+      opacity: 0.6;
+    }
+
+    .service-nav__link:hover svg,
+    .service-nav__link.active svg {
+      opacity: 1;
+    }
+
+    /* --- Parallax Section --- */
+    .parallax-cta {
+      position: relative;
+      padding: 6rem 0;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .parallax-cta__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15,26,48,0.85) 0%, rgba(27,42,74,0.75) 100%);
+      z-index: 1;
+    }
+
+    .parallax-cta__content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .parallax-cta__en {
+      font-family: var(--font-en);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 1rem;
+    }
+
+    .parallax-cta__title {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--color-white);
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+    }
+
+    .parallax-cta__desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .parallax-cta__stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .parallax-cta__stat {
+      text-align: center;
+    }
+
+    .parallax-cta__stat-number {
+      font-family: var(--font-en);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+
+    .parallax-cta__stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.3rem;
+    }
+
+    /* --- Floating elements in service sections --- */
+    .service-section-deco {
+      position: relative;
+    }
+
+    .service-section-deco .floating-element {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .service-section-deco .floating-element--circle {
+      border-radius: 50%;
+      border: 1px solid rgba(255, 107, 0, 0.08);
+    }
+
+    .service-section-deco .floating-element--dot {
+      border-radius: 50%;
+      background: rgba(255, 107, 0, 0.06);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 1023px) {
+      .service-detail__inner {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+      }
+
+      .service-detail:nth-child(even) .service-detail__inner {
+        direction: ltr;
+      }
+
+      .service-detail__icon-box svg {
+        width: 90px;
+        height: 90px;
+      }
+
+      .flow-steps {
+        flex-wrap: wrap;
+        gap: var(--spacing-lg);
+        justify-content: center;
+      }
+
+      .flow-step {
+        max-width: 180px;
+      }
+
+      .flow-step__connector {
+        display: none;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+      }
+
+      .service-nav__link {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.8125rem;
+      }
+
+      .parallax-cta__title {
+        font-size: 1.5rem;
+      }
+
+      .parallax-cta__stats {
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .page-header {
+        height: 240px;
+      }
+
+      .service-detail__title {
+        font-size: 1.375rem;
+      }
+
+      .service-detail__features {
+        grid-template-columns: 1fr;
+      }
+
+      .service-detail__icon-box {
+        aspect-ratio: 16 / 10;
+      }
+
+      .service-detail__icon-box svg {
+        width: 80px;
+        height: 80px;
+      }
+
+      .service-detail__badge {
+        width: 48px;
+        height: 48px;
+        font-size: 1rem;
+        top: -8px;
+        left: -8px;
+      }
+
+      .flow-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+      }
+
+      .flow-step {
+        max-width: 100%;
+        display: flex;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+        text-align: left;
+        padding: 0;
+      }
+
+      .flow-step__number {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        font-size: 1.125rem;
+        margin: 0;
+      }
+
+      .flow-step__text {
+        flex: 1;
+      }
+
+      .contact-form__row {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-services h2 {
+        font-size: 1.5rem;
+      }
+
+      .cta-services__buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-services__buttons .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .parallax-cta__stat-number {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loading-screen__logo">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+        <circle cx="20" cy="20" r="18" stroke="#FF6B00" stroke-width="1.5" opacity="0.3"/>
+        <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+        <circle cx="20" cy="22" r="4" fill="white"/>
+        <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="10" cy="20" r="2" fill="white" opacity="0.5"/>
+        <circle cx="30" cy="20" r="2" fill="white" opacity="0.5"/>
+        <circle cx="20" cy="32" r="2" fill="white" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="loading-screen__text" style="color:rgba(255,255,255,0.4);font-family:'Inter',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;margin-top:2rem;">SKYSCOPE DRONE SERVICES</div>
+    <div class="loading-screen__progress"><div class="loading-screen__progress-bar"></div></div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
+
+  <!-- Page Transition -->
+  <div class="page-transition active"></div>
+
+  <!-- Header -->
+  <header class="header scrolled" role="banner">
+    <div class="header__inner">
+      <a href="../index.html" class="header__logo" aria-label="SkyScope ホーム">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+          <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+          <circle cx="20" cy="22" r="4" fill="currentColor"/>
+          <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="10" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="30" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="20" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+        </svg>
+        <span class="header__logo-text">
+          <span class="header__logo-main">SKYSCOPE</span>
+          <span class="header__logo-sub">DRONE SERVICES</span>
+        </span>
+      </a>
+
+      <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="header__nav-list">
+          <li><a href="../index.html" class="header__nav-link">ホーム</a></li>
+          <li><a href="about.html" class="header__nav-link">会社概要</a></li>
+          <li><a href="services.html" class="header__nav-link active">業務内容</a></li>
+          <li><a href="news.html" class="header__nav-link">ニュース</a></li>
+          <li><a href="works.html" class="header__nav-link">成果物紹介</a></li>
+          <li><a href="equipment.html" class="header__nav-link">機体紹介</a></li>
+        </ul>
+        <a href="services.html#contact" class="header__cta btn-magnetic">
+          お問い合わせ
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </nav>
+
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" role="navigation" aria-label="モバイルナビゲーション">
+    <div class="mobile-nav__inner">
+      <a href="../index.html" class="mobile-nav__link">ホーム</a>
+      <a href="about.html" class="mobile-nav__link">会社概要</a>
+      <a href="services.html" class="mobile-nav__link">業務内容</a>
+      <a href="news.html" class="mobile-nav__link">ニュース</a>
+      <a href="works.html" class="mobile-nav__link">成果物紹介</a>
+      <a href="equipment.html" class="mobile-nav__link">機体紹介</a>
+      <a href="services.html#contact" class="mobile-nav__link" style="color: var(--color-primary);">お問い合わせ</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1499260126922-fbb24624a4e8?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920'); background-size: cover; background-position: center;">
+      <div class="page-header__overlay"></div>
+      <div class="page-header__deco-circle page-header__deco-circle--1"></div>
+      <div class="page-header__deco-circle page-header__deco-circle--2"></div>
+      <div class="page-header__deco-circle page-header__deco-circle--3"></div>
+      <div class="page-header__content">
+        <p class="page-header__en">Our Services</p>
+        <h1 class="page-header__title">業務内容</h1>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <div class="container">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item">
+            <a href="../index.html" class="breadcrumb__link">ホーム</a>
+          </li>
+          <li class="breadcrumb__item">
+            <span class="breadcrumb__current">業務内容</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Service Anchor Nav -->
+    <nav class="service-nav" aria-label="サービスナビゲーション">
+      <div class="container">
+        <ul class="service-nav__list">
+          <li>
+            <a href="#survey" class="service-nav__link">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28L12 16L18 22L28 8"/><path d="M4 28H28"/></svg>
+              ドローン測量
+            </a>
+          </li>
+          <li>
+            <a href="#aerial" class="service-nav__link">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="24" height="16" rx="2"/><circle cx="16" cy="16" r="5"/></svg>
+              空撮サービス
+            </a>
+          </li>
+          <li>
+            <a href="#inspection" class="service-nav__link">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4V12H4"/><path d="M4 12L16 28L28 12"/><path d="M20 4V12H28"/></svg>
+              点検サービス
+            </a>
+          </li>
+          <li>
+            <a href="#spraying" class="service-nav__link">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 28C8 28 4 20 4 16C4 12 8 8 16 8C24 8 28 12 28 16C28 20 24 28 24 28"/><circle cx="16" cy="16" r="3"/></svg>
+              農薬散布
+            </a>
+          </li>
+          <li>
+            <a href="#sales" class="service-nav__link">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="20" height="24" rx="2"/><path d="M12 12H20M12 16H20M12 20H17"/></svg>
+              機体販売
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Service Intro -->
+    <section class="section service-section-deco">
+      <div class="floating-element floating-element--circle" style="width:180px;height:180px;top:-40px;right:-60px;animation:floatY 8s ease-in-out infinite;"></div>
+      <div class="floating-element floating-element--dot" style="width:12px;height:12px;top:30%;left:5%;animation:floatY 6s ease-in-out infinite 1s;"></div>
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">Services</span>
+          <h2>5つのコアサービス</h2>
+          <p class="section-subtitle">最先端ドローン技術と豊富な経験で、多様なニーズに対応いたします。<br>測量から機体販売まで、ワンストップでお任せください。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 1: ドローン測量 -->
+    <section id="survey" class="section service-detail service-section-deco">
+      <div class="floating-element floating-element--dot" style="width:8px;height:8px;bottom:20%;right:8%;animation:floatY 7s ease-in-out infinite 0.5s;"></div>
+      <div class="container">
+        <div class="service-detail__inner">
+          <div class="service-detail__visual fade-in-left">
+            <div class="service-detail__badge">01</div>
+            <div class="service-detail__icon-box">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 95L40 55L60 70L80 40L100 25" stroke="#1B2A4A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 95L40 55L60 70L80 40L100 25" stroke="#FF6B00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4" opacity="0.3"/>
+                <circle cx="40" cy="55" r="5" fill="#FF6B00" opacity="0.2" stroke="#FF6B00" stroke-width="2"/>
+                <circle cx="60" cy="70" r="5" fill="#FF6B00" opacity="0.2" stroke="#FF6B00" stroke-width="2"/>
+                <circle cx="80" cy="40" r="5" fill="#FF6B00" opacity="0.2" stroke="#FF6B00" stroke-width="2"/>
+                <circle cx="100" cy="25" r="5" fill="#FF6B00" opacity="0.2" stroke="#FF6B00" stroke-width="2"/>
+                <path d="M15 100H105" stroke="#1B2A4A" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+                <path d="M15 100V15" stroke="#1B2A4A" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+                <!-- Grid lines -->
+                <path d="M15 80H105M15 60H105M15 40H105" stroke="#1B2A4A" stroke-width="0.5" opacity="0.1"/>
+                <path d="M35 15V100M55 15V100M75 15V100M95 15V100" stroke="#1B2A4A" stroke-width="0.5" opacity="0.1"/>
+                <!-- Drone icon -->
+                <g transform="translate(70, 10)">
+                  <rect x="-6" y="-2" width="12" height="6" rx="2" fill="#1B2A4A" opacity="0.6"/>
+                  <line x1="-12" y1="0" x2="-6" y2="0" stroke="#1B2A4A" stroke-width="1.5" opacity="0.4"/>
+                  <line x1="6" y1="0" x2="12" y2="0" stroke="#1B2A4A" stroke-width="1.5" opacity="0.4"/>
+                  <ellipse cx="-14" cy="0" rx="6" ry="1.5" fill="#FF6B00" opacity="0.3"/>
+                  <ellipse cx="14" cy="0" rx="6" ry="1.5" fill="#FF6B00" opacity="0.3"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="service-detail__content fade-in-right">
+            <span class="service-detail__en">Drone Survey</span>
+            <h2 class="service-detail__title">ドローン測量</h2>
+            <p class="service-detail__desc">高精度なドローン測量技術により、広大なエリアの地形データを短時間で取得。従来の測量方法と比較して、大幅な工期短縮とコスト削減を実現します。3Dマッピングから点群データ生成まで、プロジェクトに最適なソリューションをご提供します。</p>
+            <div class="service-detail__features">
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>3Dマッピング・地形モデル作成</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>高密度点群データ生成</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>オルソモザイク画像作成</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>地形モデリング（DSM/DTM）</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>土量計算・縦横断面図</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>GISデータ連携対応</span>
+              </div>
+            </div>
+            <div class="service-detail__usecases">
+              <p class="service-detail__usecases-title">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M2 4H14M2 8H14M2 12H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                活用シーン
+              </p>
+              <div class="service-detail__usecases-list">
+                <span class="service-detail__usecase-tag">建設・土木現場</span>
+                <span class="service-detail__usecase-tag">造成工事</span>
+                <span class="service-detail__usecase-tag">河川・砂防</span>
+                <span class="service-detail__usecase-tag">鉱山・採石場</span>
+                <span class="service-detail__usecase-tag">用地測量</span>
+                <span class="service-detail__usecase-tag">森林調査</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="section-divider section-divider--wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C200,120 400,0 600,60 C800,120 1000,0 1200,60 L1200,120 L0,120 Z" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Service 2: 空撮サービス -->
+    <section id="aerial" class="section service-detail service-section-deco">
+      <div class="floating-element floating-element--circle" style="width:120px;height:120px;top:10%;left:-40px;animation:floatY 9s ease-in-out infinite 2s;"></div>
+      <div class="container">
+        <div class="service-detail__inner">
+          <div class="service-detail__visual fade-in-left">
+            <div class="service-detail__badge">02</div>
+            <div class="service-detail__icon-box">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Camera body -->
+                <rect x="25" y="35" width="70" height="50" rx="8" stroke="#1B2A4A" stroke-width="2.5" fill="none"/>
+                <circle cx="60" cy="60" r="18" stroke="#FF6B00" stroke-width="2.5" fill="none"/>
+                <circle cx="60" cy="60" r="10" stroke="#1B2A4A" stroke-width="2" fill="none" opacity="0.4"/>
+                <circle cx="60" cy="60" r="4" fill="#FF6B00" opacity="0.3"/>
+                <!-- Lens reflection -->
+                <path d="M50 50C52 48 56 47 60 47" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+                <!-- Record indicator -->
+                <circle cx="85" cy="42" r="3" fill="#FF6B00" opacity="0.6"/>
+                <!-- Film strip / playback bars -->
+                <rect x="30" y="90" width="14" height="10" rx="2" fill="#1B2A4A" opacity="0.1"/>
+                <rect x="48" y="90" width="14" height="10" rx="2" fill="#FF6B00" opacity="0.15"/>
+                <rect x="66" y="90" width="14" height="10" rx="2" fill="#1B2A4A" opacity="0.1"/>
+                <rect x="84" y="90" width="6" height="10" rx="2" fill="#1B2A4A" opacity="0.1"/>
+                <!-- 4K badge -->
+                <rect x="28" y="23" width="28" height="14" rx="3" fill="#FF6B00" opacity="0.15" stroke="#FF6B00" stroke-width="1"/>
+                <text x="42" y="33" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FF6B00" text-anchor="middle">4K/8K</text>
+              </svg>
+            </div>
+          </div>
+          <div class="service-detail__content fade-in-right">
+            <span class="service-detail__en">Aerial Photography</span>
+            <h2 class="service-detail__title">空撮サービス</h2>
+            <p class="service-detail__desc">4K/8K対応の高性能カメラを搭載したドローンで、息をのむような空撮映像・写真を撮影。プロモーション映像、建設現場の記録、不動産の紹介映像など、あらゆるニーズに対応する高品質な映像制作サービスです。</p>
+            <div class="service-detail__features">
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>4K/8K超高画質映像撮影</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>建設工事の定点進捗記録</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>企業・自治体プロモーション</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>イベント・スポーツ中継撮影</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>不動産・観光地の紹介映像</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>映像編集・カラーグレーディング</span>
+              </div>
+            </div>
+            <div class="service-detail__usecases">
+              <p class="service-detail__usecases-title">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M2 4H14M2 8H14M2 12H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                活用シーン
+              </p>
+              <div class="service-detail__usecases-list">
+                <span class="service-detail__usecase-tag">企業PR動画</span>
+                <span class="service-detail__usecase-tag">建設記録</span>
+                <span class="service-detail__usecase-tag">テレビ・映画撮影</span>
+                <span class="service-detail__usecase-tag">不動産物件紹介</span>
+                <span class="service-detail__usecase-tag">観光プロモーション</span>
+                <span class="service-detail__usecase-tag">スポーツイベント</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider (inverted) -->
+    <div class="section-divider section-divider--wave-inverted">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C200,0 400,120 600,60 C800,0 1000,120 1200,60 L1200,0 L0,0 Z" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Service 3: 点検サービス -->
+    <section id="inspection" class="section service-detail service-section-deco">
+      <div class="floating-element floating-element--dot" style="width:10px;height:10px;top:15%;right:6%;animation:floatY 7s ease-in-out infinite 1.5s;"></div>
+      <div class="floating-element floating-element--circle" style="width:200px;height:200px;bottom:-60px;right:-80px;animation:floatY 10s ease-in-out infinite;"></div>
+      <div class="container">
+        <div class="service-detail__inner">
+          <div class="service-detail__visual fade-in-left">
+            <div class="service-detail__badge">03</div>
+            <div class="service-detail__icon-box">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Building / infrastructure -->
+                <rect x="15" y="40" width="35" height="60" rx="2" stroke="#1B2A4A" stroke-width="2" fill="none" opacity="0.4"/>
+                <rect x="22" y="48" width="8" height="8" rx="1" fill="#1B2A4A" opacity="0.15"/>
+                <rect x="35" y="48" width="8" height="8" rx="1" fill="#1B2A4A" opacity="0.15"/>
+                <rect x="22" y="62" width="8" height="8" rx="1" fill="#1B2A4A" opacity="0.15"/>
+                <rect x="35" y="62" width="8" height="8" rx="1" fill="#1B2A4A" opacity="0.15"/>
+                <rect x="22" y="76" width="8" height="8" rx="1" fill="#1B2A4A" opacity="0.15"/>
+                <rect x="35" y="76" width="8" height="8" rx="1" fill="#1B2A4A" opacity="0.15"/>
+                <!-- Bridge -->
+                <path d="M55 85H110" stroke="#1B2A4A" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M60 85V100M75 85V100M90 85V100M105 85V100" stroke="#1B2A4A" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+                <path d="M60 85C60 75 75 70 82 75C89 70 105 75 105 85" stroke="#1B2A4A" stroke-width="1.5" fill="none" opacity="0.3"/>
+                <!-- Drone with scan beam -->
+                <g transform="translate(78, 30)">
+                  <rect x="-8" y="-3" width="16" height="8" rx="3" fill="#1B2A4A" opacity="0.5"/>
+                  <line x1="-16" y1="0" x2="-8" y2="0" stroke="#1B2A4A" stroke-width="1.5" opacity="0.4"/>
+                  <line x1="8" y1="0" x2="16" y2="0" stroke="#1B2A4A" stroke-width="1.5" opacity="0.4"/>
+                  <ellipse cx="-18" cy="0" rx="7" ry="1.5" fill="#FF6B00" opacity="0.25"/>
+                  <ellipse cx="18" cy="0" rx="7" ry="1.5" fill="#FF6B00" opacity="0.25"/>
+                </g>
+                <!-- Scan beam -->
+                <path d="M78 38L65 80L91 80Z" fill="#FF6B00" opacity="0.06" stroke="#FF6B00" stroke-width="1" stroke-dasharray="3 3" opacity="0.2"/>
+                <!-- Check marks -->
+                <circle cx="28" cy="92" r="6" fill="#10B981" opacity="0.15" stroke="#10B981" stroke-width="1.5"/>
+                <path d="M25 92L27 94L31 90" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Warning -->
+                <circle cx="82" cy="68" r="6" fill="#FF6B00" opacity="0.15" stroke="#FF6B00" stroke-width="1.5"/>
+                <path d="M82 65V68M82 71V71.5" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="service-detail__content fade-in-right">
+            <span class="service-detail__en">Infrastructure Inspection</span>
+            <h2 class="service-detail__title">点検サービス</h2>
+            <p class="service-detail__desc">高所・危険箇所のインフラ設備点検をドローンで安全かつ効率的に実施。赤外線カメラやズームカメラを活用し、目視では確認困難な劣化・損傷を高精度に検出します。足場の設置が不要なため、大幅なコスト削減と工期短縮を実現します。</p>
+            <div class="service-detail__features">
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>太陽光パネル赤外線点検</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>橋梁・トンネル近接点検</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>ビル外壁・屋根の劣化診断</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>送電線・鉄塔の設備点検</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>AI解析による損傷自動検出</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>点検レポート作成・提出</span>
+              </div>
+            </div>
+            <div class="service-detail__usecases">
+              <p class="service-detail__usecases-title">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M2 4H14M2 8H14M2 12H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                活用シーン
+              </p>
+              <div class="service-detail__usecases-list">
+                <span class="service-detail__usecase-tag">メガソーラー発電所</span>
+                <span class="service-detail__usecase-tag">橋梁・高架道路</span>
+                <span class="service-detail__usecase-tag">ビル・マンション外壁</span>
+                <span class="service-detail__usecase-tag">工場・プラント設備</span>
+                <span class="service-detail__usecase-tag">通信塔・鉄塔</span>
+                <span class="service-detail__usecase-tag">ダム・河川構造物</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="parallax-cta parallax-section" data-parallax-speed="0.3" style="background-image: url('https://images.unsplash.com/photo-1526112982068-f899a62e118e?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1920'); background-size: cover; background-position: center; background-attachment: fixed;">
+      <div class="parallax-cta__overlay"></div>
+      <div class="container">
+        <div class="parallax-cta__content fade-in">
+          <p class="parallax-cta__en">Why SkyScope</p>
+          <h2 class="parallax-cta__title">選ばれる理由がここにある</h2>
+          <p class="parallax-cta__desc">高い技術力と豊富な実績で、あらゆる業種のお客様から信頼をいただいています。安全管理を徹底し、確かな品質のサービスを提供します。</p>
+          <div class="parallax-cta__stats">
+            <div class="parallax-cta__stat">
+              <div class="parallax-cta__stat-number">1,200+</div>
+              <div class="parallax-cta__stat-label">累計フライト実績</div>
+            </div>
+            <div class="parallax-cta__stat">
+              <div class="parallax-cta__stat-number">98.5%</div>
+              <div class="parallax-cta__stat-label">顧客満足度</div>
+            </div>
+            <div class="parallax-cta__stat">
+              <div class="parallax-cta__stat-number">50+</div>
+              <div class="parallax-cta__stat-label">取引企業数</div>
+            </div>
+            <div class="parallax-cta__stat">
+              <div class="parallax-cta__stat-number">10年</div>
+              <div class="parallax-cta__stat-label">業界経験</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="section-divider section-divider--wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C200,120 400,0 600,60 C800,120 1000,0 1200,60 L1200,120 L0,120 Z" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Service 4: 農薬散布 -->
+    <section id="spraying" class="section service-detail service-section-deco">
+      <div class="floating-element floating-element--dot" style="width:14px;height:14px;top:10%;left:3%;animation:floatY 8s ease-in-out infinite 0.8s;"></div>
+      <div class="floating-element floating-element--circle" style="width:150px;height:150px;bottom:5%;left:-50px;animation:floatY 11s ease-in-out infinite 3s;"></div>
+      <div class="container">
+        <div class="service-detail__inner">
+          <div class="service-detail__visual fade-in-left">
+            <div class="service-detail__badge">04</div>
+            <div class="service-detail__icon-box">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Ground/field -->
+                <path d="M10 95C10 95 30 90 60 90C90 90 110 95 110 95" stroke="#10B981" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+                <path d="M15 100C15 100 35 95 60 95C85 95 105 100 105 100" stroke="#10B981" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
+                <!-- Crop rows -->
+                <g opacity="0.25">
+                  <path d="M25 88V82" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M35 87V80" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M45 86V79" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M55 86V79" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M65 86V79" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M75 87V80" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M85 87V81" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M95 88V82" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                </g>
+                <!-- Drone -->
+                <g transform="translate(60, 35)">
+                  <rect x="-10" y="-4" width="20" height="10" rx="4" fill="#1B2A4A" opacity="0.6"/>
+                  <line x1="-20" y1="0" x2="-10" y2="0" stroke="#1B2A4A" stroke-width="2" opacity="0.5"/>
+                  <line x1="10" y1="0" x2="20" y2="0" stroke="#1B2A4A" stroke-width="2" opacity="0.5"/>
+                  <ellipse cx="-22" cy="0" rx="9" ry="2" fill="#FF6B00" opacity="0.25"/>
+                  <ellipse cx="22" cy="0" rx="9" ry="2" fill="#FF6B00" opacity="0.25"/>
+                  <!-- Tank -->
+                  <rect x="-6" y="6" width="12" height="8" rx="2" fill="#FF6B00" opacity="0.3" stroke="#FF6B00" stroke-width="1"/>
+                </g>
+                <!-- Spray particles -->
+                <g opacity="0.3">
+                  <circle cx="45" cy="55" r="2" fill="#3B82F6"/>
+                  <circle cx="52" cy="60" r="1.5" fill="#3B82F6"/>
+                  <circle cx="58" cy="52" r="2" fill="#3B82F6"/>
+                  <circle cx="65" cy="58" r="1.5" fill="#3B82F6"/>
+                  <circle cx="72" cy="54" r="2" fill="#3B82F6"/>
+                  <circle cx="48" cy="65" r="1" fill="#3B82F6"/>
+                  <circle cx="55" cy="68" r="1.5" fill="#3B82F6"/>
+                  <circle cx="63" cy="64" r="1" fill="#3B82F6"/>
+                  <circle cx="70" cy="62" r="1.5" fill="#3B82F6"/>
+                  <circle cx="75" cy="67" r="1" fill="#3B82F6"/>
+                  <circle cx="50" cy="73" r="1" fill="#3B82F6"/>
+                  <circle cx="60" cy="75" r="1" fill="#3B82F6"/>
+                  <circle cx="68" cy="72" r="1" fill="#3B82F6"/>
+                </g>
+                <!-- Flight path (dotted) -->
+                <path d="M30 35L60 35L90 35" stroke="#FF6B00" stroke-width="1" stroke-dasharray="4 4" opacity="0.3"/>
+              </svg>
+            </div>
+          </div>
+          <div class="service-detail__content fade-in-right">
+            <span class="service-detail__en">Agricultural Spraying</span>
+            <h2 class="service-detail__title">農薬散布</h2>
+            <p class="service-detail__desc">GPS制御による精密な自動飛行で、農薬・液肥をムラなく均一に散布。従来の手作業やラジコンヘリと比較し、散布精度の向上と作業時間の大幅短縮を実現します。農作業の省力化と効率化に貢献し、担い手不足の課題解決を支援します。</p>
+            <div class="service-detail__features">
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>GPS精密自動飛行散布</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>農薬・液肥・除草剤散布</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>病害虫の早期発見・防除</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>圃場マッピング・生育診断</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>散布量の自動調整制御</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>作業記録・散布証明書発行</span>
+              </div>
+            </div>
+            <div class="service-detail__usecases">
+              <p class="service-detail__usecases-title">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M2 4H14M2 8H14M2 12H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                活用シーン
+              </p>
+              <div class="service-detail__usecases-list">
+                <span class="service-detail__usecase-tag">水稲栽培</span>
+                <span class="service-detail__usecase-tag">果樹園</span>
+                <span class="service-detail__usecase-tag">茶畑</span>
+                <span class="service-detail__usecase-tag">畑作物</span>
+                <span class="service-detail__usecase-tag">大規模圃場</span>
+                <span class="service-detail__usecase-tag">中山間地域農業</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider (inverted) -->
+    <div class="section-divider section-divider--wave-inverted">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C200,0 400,120 600,60 C800,0 1000,120 1200,60 L1200,0 L0,0 Z" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Service 5: 機体販売 -->
+    <section id="sales" class="section service-detail service-section-deco">
+      <div class="floating-element floating-element--dot" style="width:10px;height:10px;bottom:25%;left:4%;animation:floatY 6s ease-in-out infinite 2s;"></div>
+      <div class="floating-element floating-element--circle" style="width:100px;height:100px;top:5%;right:-30px;animation:floatY 9s ease-in-out infinite 1s;"></div>
+      <div class="container">
+        <div class="service-detail__inner">
+          <div class="service-detail__visual fade-in-left">
+            <div class="service-detail__badge">05</div>
+            <div class="service-detail__icon-box">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Drone body -->
+                <g transform="translate(60, 45)">
+                  <rect x="-14" y="-5" width="28" height="14" rx="5" fill="#1B2A4A" opacity="0.5" stroke="#1B2A4A" stroke-width="2"/>
+                  <!-- Arms -->
+                  <line x1="-14" y1="-2" x2="-32" y2="-12" stroke="#1B2A4A" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="14" y1="-2" x2="32" y2="-12" stroke="#1B2A4A" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="-14" y1="4" x2="-32" y2="14" stroke="#1B2A4A" stroke-width="2.5" stroke-linecap="round"/>
+                  <line x1="14" y1="4" x2="32" y2="14" stroke="#1B2A4A" stroke-width="2.5" stroke-linecap="round"/>
+                  <!-- Propellers -->
+                  <ellipse cx="-34" cy="-14" rx="12" ry="3" fill="#FF6B00" opacity="0.2" stroke="#FF6B00" stroke-width="1"/>
+                  <ellipse cx="34" cy="-14" rx="12" ry="3" fill="#FF6B00" opacity="0.2" stroke="#FF6B00" stroke-width="1"/>
+                  <ellipse cx="-34" cy="16" rx="12" ry="3" fill="#FF6B00" opacity="0.2" stroke="#FF6B00" stroke-width="1"/>
+                  <ellipse cx="34" cy="16" rx="12" ry="3" fill="#FF6B00" opacity="0.2" stroke="#FF6B00" stroke-width="1"/>
+                  <!-- Motors -->
+                  <circle cx="-34" cy="-14" r="3" fill="#1B2A4A" opacity="0.4"/>
+                  <circle cx="34" cy="-14" r="3" fill="#1B2A4A" opacity="0.4"/>
+                  <circle cx="-34" cy="16" r="3" fill="#1B2A4A" opacity="0.4"/>
+                  <circle cx="34" cy="16" r="3" fill="#1B2A4A" opacity="0.4"/>
+                  <!-- Camera/gimbal -->
+                  <rect x="-5" y="9" width="10" height="7" rx="2" fill="#FF6B00" opacity="0.4"/>
+                  <circle cx="0" cy="12" r="2" fill="#FF6B00" opacity="0.6"/>
+                </g>
+                <!-- Price tag / document -->
+                <g transform="translate(85, 72)">
+                  <rect x="0" y="0" width="24" height="30" rx="3" fill="white" stroke="#1B2A4A" stroke-width="1.5" opacity="0.6"/>
+                  <path d="M5 8H19M5 13H19M5 18H14" stroke="#1B2A4A" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+                  <circle cx="12" cy="25" r="3" fill="#FF6B00" opacity="0.3"/>
+                </g>
+                <!-- Checkmark shield -->
+                <g transform="translate(10, 72)">
+                  <path d="M12 2L2 7V15C2 21 6 26 12 28C18 26 22 21 22 15V7L12 2Z" fill="#10B981" opacity="0.1" stroke="#10B981" stroke-width="1.5"/>
+                  <path d="M8 15L11 18L17 12" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="service-detail__content fade-in-right">
+            <span class="service-detail__en">Equipment Sales</span>
+            <h2 class="service-detail__title">機体販売</h2>
+            <p class="service-detail__desc">お客様の用途・予算に最適なドローン機体をご提案。測量用、撮影用、農業用など豊富なラインナップから、専門知識を活かした的確なコンサルティングを行います。購入後のメンテナンス、修理、操縦講習まで、トータルサポートを提供します。</p>
+            <div class="service-detail__features">
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>用途別機体コンサルティング</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>主要メーカー正規取扱</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>アフターサービス・修理対応</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>操縦講習・資格取得サポート</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>保険・法規制のご相談</span>
+              </div>
+              <div class="service-detail__feature">
+                <span class="service-detail__feature-icon">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span>定期メンテナンスプラン</span>
+              </div>
+            </div>
+            <div class="service-detail__usecases">
+              <p class="service-detail__usecases-title">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M2 4H14M2 8H14M2 12H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                活用シーン
+              </p>
+              <div class="service-detail__usecases-list">
+                <span class="service-detail__usecase-tag">建設会社の自社運用</span>
+                <span class="service-detail__usecase-tag">農業法人の導入</span>
+                <span class="service-detail__usecase-tag">映像制作会社</span>
+                <span class="service-detail__usecase-tag">自治体・公共団体</span>
+                <span class="service-detail__usecase-tag">教育・研究機関</span>
+                <span class="service-detail__usecase-tag">新規事業の立ち上げ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider before Flow Section -->
+    <div class="section-divider section-divider--wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C200,120 400,0 600,60 C800,120 1000,0 1200,60 L1200,120 L0,120 Z" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <!-- Service Flow -->
+    <section class="section flow-section">
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">Service Flow</span>
+          <h2>依頼の流れ</h2>
+          <p class="section-subtitle">お問い合わせから納品まで、5つのステップでスムーズに進行します</p>
+        </div>
+
+        <div class="flow-steps">
+          <div class="flow-step fade-in delay-1">
+            <div class="flow-step__number">1</div>
+            <div class="flow-step__connector"></div>
+            <div class="flow-step__text">
+              <h3 class="flow-step__title">お問い合わせ</h3>
+              <p class="flow-step__desc">電話・メール・フォームからお気軽にご相談ください。ご要望をヒアリングいたします。</p>
+            </div>
+          </div>
+
+          <div class="flow-step fade-in delay-2">
+            <div class="flow-step__number">2</div>
+            <div class="flow-step__connector"></div>
+            <div class="flow-step__text">
+              <h3 class="flow-step__title">現地調査・ご提案</h3>
+              <p class="flow-step__desc">現場を確認し、最適なプランと正確なお見積もりをご提案いたします。</p>
+            </div>
+          </div>
+
+          <div class="flow-step fade-in delay-3">
+            <div class="flow-step__number">3</div>
+            <div class="flow-step__connector"></div>
+            <div class="flow-step__text">
+              <h3 class="flow-step__title">契約・準備</h3>
+              <p class="flow-step__desc">ご契約後、飛行許可申請や機材準備など万全の体制を整えます。</p>
+            </div>
+          </div>
+
+          <div class="flow-step fade-in delay-4">
+            <div class="flow-step__number">4</div>
+            <div class="flow-step__connector"></div>
+            <div class="flow-step__text">
+              <h3 class="flow-step__title">現場作業</h3>
+              <p class="flow-step__desc">経験豊富なパイロットが安全第一で作業を実施。リアルタイムで状況をご報告します。</p>
+            </div>
+          </div>
+
+          <div class="flow-step fade-in delay-5">
+            <div class="flow-step__number">5</div>
+            <div class="flow-step__text">
+              <h3 class="flow-step__title">データ納品</h3>
+              <p class="flow-step__desc">高精度なデータを迅速に納品。報告書の作成やアフターフォローも対応します。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-services">
+      <div class="container">
+        <div class="cta-services__content fade-in">
+          <h2>まずはお気軽にご相談ください</h2>
+          <p>測量・空撮・点検・農薬散布の無料見積もりから、機体の選定相談まで、専門スタッフが丁寧にお応えします。</p>
+          <div class="cta-services__buttons">
+            <a href="#contact" class="btn btn--secondary btn-magnetic btn-magnetic--primary">
+              お問い合わせフォームへ
+              <span class="btn__arrow">→</span>
+            </a>
+            <a href="tel:000-0000-0000" class="btn btn--outline btn-magnetic" style="border-color: white;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              000-0000-0000
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-title fade-in">
+          <span class="en-title">Contact</span>
+          <h2>お問い合わせ</h2>
+          <p class="section-subtitle">ご質問・ご相談はお気軽にお問い合わせください</p>
+        </div>
+
+        <div class="contact-inner">
+          <div class="contact-info fade-in-left">
+            <h3 class="contact-info__title">ドローンのことなら<br>何でもご相談ください</h3>
+            <p class="contact-info__desc">測量・空撮・点検・農薬散布のご依頼から、機体の購入相談、操縦ライセンスの取得サポートまで、ドローンに関するあらゆるご質問にお答えします。まずはお気軽にお問い合わせください。</p>
+
+            <div class="contact-info__items">
+              <div class="contact-info__item">
+                <div class="contact-info__item-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div class="contact-info__item-text">
+                  <span class="contact-info__item-label">電話番号</span>
+                  <span class="contact-info__item-value">000-0000-0000</span>
+                </div>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__item-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7L13.03 12.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+                </div>
+                <div class="contact-info__item-text">
+                  <span class="contact-info__item-label">メールアドレス</span>
+                  <span class="contact-info__item-value">info@skyscope-drone.example</span>
+                </div>
+              </div>
+              <div class="contact-info__item">
+                <div class="contact-info__item-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+                </div>
+                <div class="contact-info__item-text">
+                  <span class="contact-info__item-label">受付時間</span>
+                  <span class="contact-info__item-value">平日 9:00 - 18:00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper fade-in-right">
+            <h3 class="contact-form__title">お問い合わせフォーム</h3>
+            <form class="contact-form" action="#" method="post" onsubmit="return false;">
+              <div class="contact-form__row">
+                <div class="contact-form__group">
+                  <label class="contact-form__label" for="contact-name">
+                    お名前
+                    <span class="required">必須</span>
+                  </label>
+                  <input type="text" id="contact-name" name="name" class="contact-form__input" placeholder="山田 太郎">
+                </div>
+                <div class="contact-form__group">
+                  <label class="contact-form__label" for="contact-company">
+                    会社名
+                  </label>
+                  <input type="text" id="contact-company" name="company" class="contact-form__input" placeholder="株式会社○○">
+                </div>
+              </div>
+
+              <div class="contact-form__row">
+                <div class="contact-form__group">
+                  <label class="contact-form__label" for="contact-email">
+                    メールアドレス
+                    <span class="required">必須</span>
+                  </label>
+                  <input type="email" id="contact-email" name="email" class="contact-form__input" placeholder="example@email.com">
+                </div>
+                <div class="contact-form__group">
+                  <label class="contact-form__label" for="contact-phone">
+                    電話番号
+                  </label>
+                  <input type="tel" id="contact-phone" name="phone" class="contact-form__input" placeholder="000-0000-0000">
+                </div>
+              </div>
+
+              <div class="contact-form__group">
+                <label class="contact-form__label" for="contact-service">
+                  ご興味のあるサービス
+                </label>
+                <select id="contact-service" name="service" class="contact-form__select">
+                  <option value="" selected disabled>選択してください</option>
+                  <option value="survey">ドローン測量</option>
+                  <option value="aerial">空撮サービス</option>
+                  <option value="inspection">点検サービス</option>
+                  <option value="spraying">農薬散布</option>
+                  <option value="sales">機体販売</option>
+                  <option value="other">その他</option>
+                </select>
+              </div>
+
+              <div class="contact-form__group">
+                <label class="contact-form__label" for="contact-message">
+                  お問い合わせ内容
+                  <span class="required">必須</span>
+                </label>
+                <textarea id="contact-message" name="message" class="contact-form__textarea" placeholder="ご質問やご依頼の詳細をお書きください"></textarea>
+              </div>
+
+              <button type="submit" class="contact-form__submit btn-magnetic btn-magnetic--primary">
+                送信する
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+              </button>
+              <p class="contact-form__note">※ このフォームはデモ用です。実際の送信は行われません。</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__logo">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+              <path d="M20 8L26 16H14L20 8Z" fill="#FF6B00"/>
+              <circle cx="20" cy="22" r="4" fill="currentColor"/>
+              <path d="M10 20H14M26 20H30M20 28V32M20 12V8" stroke="#FF6B00" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="10" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+              <circle cx="30" cy="20" r="2" fill="currentColor" opacity="0.5"/>
+              <circle cx="20" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <span class="header__logo-text">
+              <span class="header__logo-main">SKYSCOPE</span>
+              <span class="header__logo-sub">DRONE SERVICES</span>
+            </span>
+          </a>
+          <p class="footer__desc">SkyScope（スカイスコープ）は、先端ドローン技術を活用し、測量・空撮・点検・農薬散布・機体販売を行うドローンサービス企業です。</p>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">サービス</h4>
+          <nav class="footer__links">
+            <a href="services.html#survey" class="footer__link">ドローン測量</a>
+            <a href="services.html#aerial" class="footer__link">空撮サービス</a>
+            <a href="services.html#inspection" class="footer__link">点検サービス</a>
+            <a href="services.html#spraying" class="footer__link">農薬散布</a>
+            <a href="services.html#sales" class="footer__link">機体販売</a>
+          </nav>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">企業情報</h4>
+          <nav class="footer__links">
+            <a href="about.html" class="footer__link">会社概要</a>
+            <a href="news.html" class="footer__link">ニュース</a>
+            <a href="works.html" class="footer__link">成果物紹介</a>
+            <a href="equipment.html" class="footer__link">機体紹介</a>
+          </nav>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">お問い合わせ</h4>
+          <div class="footer__links">
+            <span class="footer__link">TEL: 000-0000-0000</span>
+            <span class="footer__link">受付: 平日 9:00 - 18:00</span>
+            <span class="footer__link">info@skyscope-drone.example</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 SkyScope Drone Services. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page Top Button -->
+  <button class="page-top" aria-label="ページトップへ戻る">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 16V4M10 4L4 10M10 4L16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
